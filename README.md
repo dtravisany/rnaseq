@@ -34,13 +34,13 @@ De todas maneras, si los quiere descargar puede verlos [acá](http://www.ncbi.nl
 
 ### Software:
 
-Para el filtrado de los reads utilizaremos [TrimGalore](https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md)
-Para el alineamiento de los reads filtrados utilizaremos [STAR](https://github.com/alexdobin/STAR)
-Para generar el conteo a partir de los archivos BAM (que son la forma binaria de un [SAM](https://samtools.github.io/hts-specs/SAMv1.pdf)) 
+- Para el filtrado de los reads utilizaremos [TrimGalore](https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md)
+- Para el alineamiento de los reads filtrados utilizaremos [STAR](https://github.com/alexdobin/STAR)
+- Para generar el conteo a partir de los archivos BAM (que son la forma binaria de un [SAM](https://samtools.github.io/hts-specs/SAMv1.pdf)) 
 utilizaremos [HTSeq](http://www-huber.embl.de/HTSeq/doc/overview.html)
-Para el analisis de expresión diferencial utilizaremos [DESeq2](http://bioconductor.org/packages/release/bioc/html/DESeq2.html).
-Para finalizar visualizaremos nuestros resultados en el [Integrative Genome Viewer](https://software.broadinstitute.org/software/igv/)
-Para finalizar visualizaremos nuestros resultados en [Artemis](https://software.broadinstitute.org/software/igv/)
+- Para el analisis de expresión diferencial utilizaremos [DESeq2](http://bioconductor.org/packages/release/bioc/html/DESeq2.html).
+- Para finalizar visualizaremos nuestros resultados en el [Integrative Genome Viewer](https://software.broadinstitute.org/software/igv/)
+- Para finalizar visualizaremos nuestros resultados en [Artemis](https://software.broadinstitute.org/software/igv/)
 
 
 
