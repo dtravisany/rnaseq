@@ -18,7 +18,7 @@ Se realizarán las siguientes tareas:
 
 Se utilizaran los datos de una Nota Técnica de BMC - Technical Note. 
 Corresponden a transcriptoma de la soya creciendo en condiciones ambientales normales o
- de alto contenido de Ozono ($O_3$).
+ de alto contenido de Ozono ($ O_3 $).
 
 ### Reads:
 
