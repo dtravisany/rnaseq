@@ -25,22 +25,30 @@ Estos corresponden a transcriptoma de la soya creciendo en condiciones ambiental
 
 Como vimos en clase se necesitan dos datos:
 El genoma de referencia y la anotación en un formato como el [GFF](https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md)
-Se utilizará el genoma de referencia y anotación de la soya correspondiente a la versión [Wm82.a2.v1](https://phytozome.jgi.doe.gov/pz/portal.html#!bulk?org=Org_Gmax)
+Se utilizará el genoma de referencia y anotación de la soya correspondiente a la versión [Wm82.a2.v1](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/004/515/GCF_000004515.5_Glycine_max_v2.1).
 
 ### Reads:
 
 Los reads están alojados en las carpetas de su grupo en el servidor del curso.
-De todas maneras, si los quiere descargar puede verlos [acá](http://www.ncbi.nlm.nih.gov/sra/?term=SRP009826)
+De todas maneras, si los quiere descargar puede encontrar los links [acá](http://www.ncbi.nlm.nih.gov/sra/?term=SRP009826) y descargarlos utilizando la suite de NCBI-SRA [sra-tools](https://www.ncbi.nlm.nih.gov/sra/docs/toolkitsoft/).
 
 ### Software:
 
-- Para el filtrado de los reads utilizaremos [TrimGalore](https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md)
-- Para el alineamiento de los reads filtrados utilizaremos [STAR](https://github.com/alexdobin/STAR)
-- Para generar el conteo a partir de los archivos BAM (que son la forma binaria de un [SAM](https://samtools.github.io/hts-specs/SAMv1.pdf)) 
-utilizaremos [HTSeq](http://www-huber.embl.de/HTSeq/doc/overview.html)
+- Para el filtrado de los reads utilizaremos [TrimGalore](https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md).
+- Para el alineamiento de los reads filtrados utilizaremos [STAR](https://github.com/alexdobin/STAR).
+- Para generar el conteo a partir de los archivos BAM (que es la forma binaria de un [SAM](https://samtools.github.io/hts-specs/SAMv1.pdf)) 
+utilizaremos [HTSeq](http://www-huber.embl.de/HTSeq/doc/overview.html).
 - Para el analisis de expresión diferencial utilizaremos [DESeq2](http://bioconductor.org/packages/release/bioc/html/DESeq2.html).
-- Para finalizar visualizaremos nuestros resultados en el [Integrative Genome Viewer](https://software.broadinstitute.org/software/igv/)
-- Para finalizar visualizaremos nuestros resultados en [Artemis](https://software.broadinstitute.org/software/igv/)
+- Para finalizar visualizaremos nuestros resultados en el [Integrative Genome Viewer](https://software.broadinstitute.org/software/igv/).
+- Para finalizar visualizaremos nuestros resultados en [Artemis](https://software.broadinstitute.org/software/igv/).
+
+# Inicio del Práctico
+
+## Quality Check de los Reads
+
+Debe realizar un quality Check de los reads utilizando el siguiente comando:
+
+			trim-galore
 
 
 
