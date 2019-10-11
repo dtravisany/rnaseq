@@ -81,11 +81,12 @@ Para mapear los reads al genoma de referencia los alineadores deben generar un �
 Todos los resultados quedarán guardados en la dirección dada al parámetro `--genomeDir`
 
 Con respecto a las opciones/parámetros utilizadas:
-|Parámetro|Descripción|
-| --runMode| indica el tipo de opcion que utilizará STAR, en este caso queremos generar un índice del genoma por lo que utilizamos la flag `genomeGenerate`|
-| --genomeDir| indica donde se guardaran los resultados del indice y la ubicación de los archivos del genoma|
-|--genomeFastaFiles| indica donde estan almacenadas las secuencias del genoma en formato `FASTA`|
-|--sjdbGTFfile| sj: splice junction db: database GTFfile: archivo GTF indica la ubicación del archivo GTF para mejorar e improvisar el mapeo dado el modelo de los genes|
-|--sjdbOverhang| Especifica el largo a considerar de la secuencia genómica alrededor del splice junction, este valor esta ligado al largo de los reads y deberia ser `max(ReadLength) - 1`  |
-|--runThreadN| especifica cuantas hebras se ejecutaran en paralelo en nuestro equipo, este numero no debe sobrepasar la cantidad de cores que tiene un computador y pruebas de escalamiento deberian ser ejecutadas para calcular el óptimo|
+
+| Parámetro | Descripción |
+| --runMode | indica el tipo de opcion que utilizará STAR, en este caso queremos generar un índice del genoma por lo que utilizamos la flag `genomeGenerate`|
+| --genomeDir | indica donde se guardaran los resultados del indice y la ubicación de los archivos del genoma |
+| --genomeFastaFiles | indica donde estan almacenadas las secuencias del genoma en formato `FASTA` |
+| --sjdbGTFfile | sj: splice junction db: database GTFfile: archivo GTF indica la ubicación del archivo GTF para mejorar e improvisar el mapeo dado el modelo de los genes |
+| --sjdbOverhang | Especifica el largo a considerar de la secuencia genómica alrededor del splice junction, este valor esta ligado al largo de los reads y deberia ser `max(ReadLength) - 1`  |
+| --runThreadN | especifica cuantas hebras se ejecutaran en paralelo en nuestro equipo, este numero no debe sobrepasar la cantidad de cores que tiene un computador y pruebas de escalamiento deberian ser ejecutadas para calcular el óptimo |
 
