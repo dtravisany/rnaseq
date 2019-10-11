@@ -46,9 +46,9 @@ utilizaremos [HTSeq](http://www-huber.embl.de/HTSeq/doc/overview.html).
 
 ## Quality Check de los Reads
 
-Debe realizar un quality Check de los reads utilizando el siguiente comando:
+Utilizaremos Trim Galore para hacer un quality check y filtrar los reads de las muestras:
 
-			trim-galore --length 50  --quality 35 <READSFILE.fastq>
+			trim_galore --length 50  --quality 35 <READSFILE.fastq>
 
 
 Ese comando filtrara todos los reads que tengan un largo menor a 50bp y un [phred quality value](https://www.illumina.com/documents/products/technotes/technote_Q-Scores.pdf) mayor a 35.
@@ -63,7 +63,7 @@ Recordemos la tabla de phred Quality:
 | 40 | 1 en 10000 | 99.99% |
 | 50 | 1 en 100000 | 99.999% |
 
-
+El resultado del comando nos entregará los reads filtrados con extensión `trimmed.fq` y un log `fastq_trimming_report.txt`
 
 
 
