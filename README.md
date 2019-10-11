@@ -48,7 +48,7 @@ utilizaremos [HTSeq](http://www-huber.embl.de/HTSeq/doc/overview.html).
 
 Debe realizar un quality Check de los reads utilizando el siguiente comando:
 
-			trim-galore
+			trim-galore --length 50  --quality 35 <READSFILE.fastq>
 
 
 Ese comando filtrara todos los reads que tengan un largo menor a 50bp y un [phred quality value](https://www.illumina.com/documents/products/technotes/technote_Q-Scores.pdf) mayor a 35.
