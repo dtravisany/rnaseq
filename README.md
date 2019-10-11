@@ -146,11 +146,15 @@ R tiene diversos webservers y servidores que guardan información y versiones de
 
 Para bioinformática existe un repositorio particular de código de R que se llama [bioconductor](https://www.bioconductor.org/)
 
-## Calculo de expresión diferencial
+## Cálculo de expresión diferencial
 
-Para calcular la expresión diferencial necesitaremos la librería de R [DESeq2](https://www.bioconductor.org/packages/release/bioc/html/DESeq2.html). 
-la publicación que detalla la metodología implementada en DESeq2 la puede encontrar [acá](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4302049/pdf/13059_2014_Article_550.pdf).
+Para calcular la expresión diferencial necesitaremos la librería de R [DESeq2](https://www.bioconductor.org/packages/release/bioc/html/DESeq2.html). La publicación que detalla la metodología implementada en DESeq2 la puede encontrar [acá](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4302049/pdf/13059_2014_Article_550.pdf).
 
+### Jupyter-Notebooks
+
+He diseñado [Jupyter Notebooks](https://jupyter.org/) para hacer la clase más dínamica, generalmente los jupyter-notebook se cargan bien en Github, pero si tuviesen algun problema pueden copiar el link del Jupyter-Notebook en:
+
+[https://nbviewer.jupyter.org/](https://nbviewer.jupyter.org/)
 
 
 
