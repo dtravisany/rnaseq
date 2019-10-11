@@ -51,6 +51,18 @@ Debe realizar un quality Check de los reads utilizando el siguiente comando:
 			trim-galore
 
 
+Ese comando filtrara todos los reads que tengan un largo menor a 50bp y un [phred quality value](https://www.illumina.com/documents/products/technotes/technote_Q-Scores.pdf) mayor a 35.
+
+Recordemos la tabla de phred Quality:
+
+| Valor Phred| Probabilidad de base errónea | Precisión |  
+| ----- | ---- |----|
+| 10 | 1 en 10 | 90% |
+| 20 | 1 en 100 | 99% |
+| 30 | 1 en 1000 | 99.9% |
+| 40 | 1 en 10000 | 99.99% |
+| 50 | 1 en 100000 | 99.999% |
+
 
 
 
