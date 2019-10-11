@@ -54,7 +54,7 @@ Utilizaremos Trim Galore para hacer un quality check y filtrar los reads de las 
 			trim_galore --length 50  --quality 35 <READSFILE.fastq>
 
 
-Ese comando filtrara todos los reads que tengan un largo menor a '50bp' y un [phred quality value](https://www.illumina.com/documents/products/technotes/technote_Q-Scores.pdf) mayor a '35'.
+Ese comando filtrara todos los reads que tengan un largo menor a `50bp` y un [phred quality value](https://www.illumina.com/documents/products/technotes/technote_Q-Scores.pdf) mayor a `35`.
 
 Recordemos la tabla de phred Quality:
 
@@ -71,11 +71,21 @@ El resultado del comando nos entregará los reads filtrados con extensión `trim
 ## Alineamiento / Mapeo de los reads al genoma de referencia.
 
 La carpeta `/home/<GRUPO>/RNA_SEQ/Genome/` (donde `<GRUPO>` es el identificador de su grupo) contiene los archivos del genoma de la soya, el archivo fasta de
-los cromosomas y la anotación de los genes en formato 'GTF'. Estos fueron  descargados desde el [ftp de NCBI](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/004/515/GCF_000004515.5_Glycine_max_v2.1)
+los cromosomas y la anotación de los genes en formato `GTF`. Estos fueron  descargados desde el [ftp de NCBI](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/004/515/GCF_000004515.5_Glycine_max_v2.1)
 
-Para mapear los lreads al genoma de referencia los alineadores deben generar un índice del genoma.
+Para mapear los reads al genoma de referencia los alineadores deben generar un índice del genoma. Esto permite que el proceso de mapear millones de reads se haga de forma eficiente.
+ `STAR` lo realiza de la siguiente manera:
 
-	STAR --runMode genomeGenerate --genomeDir /home/<GRUPO>/RNA_SEQ/Genome/ --genomeFastaFiles /home/<GRUPO>/RNA_SEQ/Genome/Gmax_a2_v1.fna --sjdbGTFfile /common/RNASeq_Workshop/Soybean/gmax_genome/Gmax_275_Wm82.a2.v1.gene_exons --sjdbGTFtagExonParentTranscript Parent --sjdbOverhang 100 --runThreadN 8
+	STAR --runMode genomeGenerate --genomeDir /home/<GRUPO>/RNA_SEQ/Genome/ --genomeFastaFiles /home/<GRUPO>/RNA_SEQ/Genome/Gmax_a2_v1.fna --sjdbGTFfile /home/<GRUPO>/RNA_SEQ/Genome/Gmax_a2_v1.gtf --sjdbGTFtagExonParentTranscript Parent --sjdbOverhang 99 --runThreadN 8
 
+Todos los resultados quedarán guardados en la dirección dada al parámetro `--genomeDir`
 
+Con respecto a las opciones/parámetros utilizadas:
+|Parámetro|Descripción|
+| --runMode| indica el tipo de opcion que utilizará STAR, en este caso queremos generar un índice del genoma por lo que utilizamos la flag `genomeGenerate`|
+| --genomeDir| indica donde se guardaran los resultados del indice y la ubicación de los archivos del genoma|
+|--genomeFastaFiles| indica donde estan almacenadas las secuencias del genoma en formato `FASTA`|
+|--sjdbGTFfile| sj: splice junction db: database GTFfile: archivo GTF indica la ubicación del archivo GTF para mejorar e improvisar el mapeo dado el modelo de los genes|
+|--sjdbOverhang| Especifica el largo a considerar de la secuencia genómica alrededor del splice junction, este valor esta ligado al largo de los reads y deberia ser `max(ReadLength) - 1`  |
+|--runThreadN| especifica cuantas hebras se ejecutaran en paralelo en nuestro equipo, este numero no debe sobrepasar la cantidad de cores que tiene un computador y pruebas de escalamiento deberian ser ejecutadas para calcular el óptimo|
 
