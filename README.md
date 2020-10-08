@@ -57,13 +57,13 @@ utilizaremos [HTSeq](https://htseq.readthedocs.io/en/release_0.11.1/).
 
 ## Quality Check de los Reads
 
-Utilizaremos Trim Galore para hacer un quality check y filtrar los reads de las muestras, entonces para cada grupo de reads ejecutaremos
-la instrucción:
+Utilizaremos Trim Galore para hacer un quality check y filtrar los reads de las muestras, entonces para cada archivo de reads podríamos ejecutar el comando:
 
-			trim_galore --length 50  --quality 35 <READSFILE.fastq>
+			trim_galore --length 37  --quality 30 <READSFILE.fastq>
 
 
-Ese comando filtrara todos los reads que tengan un largo menor a `50bp` y un [phred quality value](https://www.illumina.com/documents/products/technotes/technote_Q-Scores.pdf) mayor a `35`.
+Ese comando filtrará todos los reads que tengan un largo menor a `37bp` (~50% del read, dado que son reads de 75bp) y un [phred quality value](https://www.illumina.com/documents/products/technotes/technote_Q-Scores.pdf) menor a `30`. 
+
 
 Recordemos la tabla de phred Quality:
 
@@ -77,19 +77,33 @@ Recordemos la tabla de phred Quality:
 
 El resultado del comando nos entregará los reads filtrados con extensión `trimmed.fq` y un log con extensión `fastq_trimming_report.txt`
 
+
+Sin embargo, es más fácil hacer un script que nos permita realizar este trabajo repetitivo de una sola vez, para esto necesitamos primero una lista con todos nuestros fastq, los podras encontrar en `/home/<GRUPO>/RNASEQ/Reads/` (donde `<GRUPO>` es el usuario con el que se conecta por ssh):
+
+		ls *.fastq > lista
+
+Luego utilizando está lista, ejecutamos el script que programé que permite ejecutar TrimGalore para 4 archivos simultáneos:
+
+		run_trim.pl lista
+
+
 ## Alineamiento / Mapeo de los reads al genoma de referencia.
 
 ### Generación de un índice del Genoma
 
 Para mapear los reads al genoma de referencia los alineadores deben generar un índice del genoma. Esto permite que el proceso de mapear millones de reads se haga de forma eficiente.
 
-La carpeta `/home/<GRUPO>/RNA_SEQ/Genome/` (donde `<GRUPO>` es el identificador de su grupo) contiene los archivos del genoma humano, el archivo fasta de
+La carpeta `/home/<GRUPO>/RNASEQ/Genome/` contiene los archivos del genoma humano, el archivo fasta de
 los cromosomas y la anotación de los genes en formato `GTF`. Estos fueron  descargados desde el [ftp de NCBI](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13)
+
+Dado que la indexación del genoma humano demora tiempo, es recomendable crear una nueva screen como en los prácticos anteriores:
+
+	screen -S index
 
 
  `STAR` genera el índice  de la siguiente manera:
 
-	STAR --runMode genomeGenerate --genomeDir /home/<GRUPO>/RNA_SEQ/Genome/ --genomeFastaFiles /home/<GRUPO>/RNA_SEQ/Genome/Gmax_a2_v1.fna --sjdbGTFfile /home/<GRUPO>/RNA_SEQ/Genome/Gmax_a2_v1.gtf --sjdbGTFtagExonParentTranscript Parent --sjdbOverhang 99 --runThreadN 8
+	STAR --runMode genomeGenerate --genomeDir /home/<GRUPO>/RNASEQ/Genome/ --genomeFastaFiles /home/<GRUPO>/RNASEQ/Genome/GCCh38.p13.fna --sjdbGTFfile /home/<GRUPO>/RNASEQ/Genome/GCCh38.p13.gtf --sjdbGTFtagExonParentTranscript Parent --sjdbOverhang 99 --runThreadN 8
 
 Todos los resultados quedarán guardados en la dirección dada al parámetro `--genomeDir`
 
@@ -111,7 +125,7 @@ Dado que se genera el índice de los cromosomas y el genoma, ahora debemos proce
 
 Para eso `STAR` utiliza:
 
-	STAR --genomeDir /home/<GRUPO>/RNA_SEQ/Genome/ --readFilesIn READSFILE_sra.trimmed.fq --runThreadN 8 --outSAMtype BAM SortedByCoordinate --outFileNamePrefix READSFILE_sra.trimmed
+	STAR --genomeDir /home/<GRUPO>/RNASEQ/Genome/ --readFilesIn READSFILE_sra.trimmed.fq --runThreadN 8 --outSAMtype BAM SortedByCoordinate --outFileNamePrefix READSFILE_sra.trimmed
 
 | Parámetro | Descripción |
 | ---- | ---- |
@@ -129,21 +143,21 @@ Este proceso generará un archivo `BAM` que tiene los reads mapeados al genoma.
 
 ##Generar los conteos
 
-El `BAM` recien generado tiene las posiciones y el detalle de cada read mapeado a nuestro genoma de referencia,
-pero para calcular las etadísticas del mapeo necesitamos un programa que nos permita transformar esta información detallada
+El `BAM` generado tiene las posiciones y el detalle de cada read mapeado a nuestro genoma de referencia,
+pero para calcular las etadísticas del mapeo necesitamos un programa que nos permita transformar esta información detallada,
 en un simple archivo de abundancia de reads por gen. Para esto utilizaremos [HTSeq](https://htseq.readthedocs.io/en/release_0.11.1/).
 
 
 		 htseq-count -s no -r pos -t exon -f bam  <BAMFILE> <GTF> > <SALIDA>
 
-Ok, acabamos de terminar de trabajar con los grandes volumenes de datos de secuenciación y hemos terminado con un archivo 
+Ok, acabamos de terminar de trabajar con los grandes volúmenes de datos de secuenciación, hemos terminado con un archivo 
 pequeño que contiene los reads de cada experimento mapeados al genoma de referencia. Esto puede ser trabajado en su computador personal.
 
 ## Instalación de R en su computador
 
 #### Nota: Si ya tiene instalado R, en su computador puede omitir este paso.
 
-R es un lenguaje y ambiente para realizar estadística computacional. Puede obtener más información desde la [página del Proyecto](https://www.r-project.org/)
+R es un lenguaje y ambiente para realizar estadística computacional. Puede obtener más información desde la [página del proyecto](https://www.r-project.org/)
 
 
 
@@ -153,7 +167,7 @@ Descargar [RStudio](https://www.rstudio.com/products/rstudio/#Desktop)
 
 R tiene diversos webservers y servidores que guardan información y versiones de código que ya esta programado, este repositorio se llama [CRAN - Comprehensive R Archive Network](https://cran.r-project.org).
 
-Para bioinformática existe un repositorio particular de código de R que se llama [bioconductor](https://www.bioconductor.org/)
+Para bioinformática existe un repositorio particular de código de R que se llama [Bioconductor](https://www.bioconductor.org/)
 
 ## Cálculo de expresión diferencial
 
