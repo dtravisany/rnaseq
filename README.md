@@ -1,6 +1,6 @@
 # Receta para el análisis de rnaseq
 
-Tutorial RNA-Seq
+Tutorial RNA-Seq y Expresión Diferencial
 
 ## Objetivos:
 
@@ -13,13 +13,21 @@ Se realizarán las siguientes tareas:
 - Alineamiento de los reads a un genoma de referencia.
 - Conversión de los archivos a conteo por genes.
 - Analisis de los conteos con DeSeq2.
-- Anotación de nuestro experimento utilizando BioMart.
+- Enriquecimiento de Categorías GO.
  
 ## Materiales:
 
-Se utilizaran los datos de una Nota Técnica de BMC: [The bench scientist's guide to statistical analysisof RNA-Seq data](https://bmcresnotes.biomedcentral.com/track/pdf/10.1186/1756-0500-5-506).
- 
-Estos corresponden a transcriptoma de la soya creciendo en condiciones ambientales normales o de alto contenido de Ozono.
+Una buena fuente de Datos de Expresion es el [Gene Expression Atlas] (https://www.ebi.ac.uk/gxa/home) de [EBI](https://www.ebi.ac.uk)
+
+En este tutorial utilizaremos datos descargados desde Genbank, encontrados en este Atlas.
+Corresponde a datos del artículo [Reversal of Sepsis‐Like Features of Neutrophils by Interleukin‐1 Blockade in Patients With Systemic‐Onset Juvenile Idiopathic Arthritis] (https://onlinelibrary.wiley.com/doi/full/10.1002/art.40442)
+Puede descargar la tabla con la descripción de los datos [aquí] (https://www.ebi.ac.uk/gxa/experiments-content/E-GEOD-103170/resources/ExperimentDesignFile.RnaSeq/experiment-design)
+
+Corresponde a 12 RNA-Seq de 6 individuos humanos. 
+Será su responsabilidad darle contexto a los Datos de la investigación.
+
+Los datos ya se encuentran en el servidor y no es necesario descargarlos nuevamente, se ponen los link a disposición para que pueda identificar de donde se obtienen los datos en las bases de datos internacionales.
+
 
 ### Genoma de Referencia:
 
@@ -28,12 +36,12 @@ El genoma de referencia y la anotación en un formato como el [GFF](https://gith
 En este caso, para la anotación utilizaremos el formato [Gene Transfer Format GTF](http://mblab.wustl.edu/GTF22.html) que es una derivación del formato 'GFF'. Al igual que el 'GFF' está tabulado, 
 pero contiene algunas convenciones que son especificas del atributo gene del 'GFF'.
 
-Se utilizará el genoma de referencia y anotación de la soya correspondiente a la versión [Wm82.a2.v1](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/004/515/GCF_000004515.5_Glycine_max_v2.1).
+En el artículo, se utilizó la versión [GRCh37] del Genoma Humano, en nuestro caso utilizaremos la última versión del Genoma correspondiente a la [GRCh38.p13] (https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.39) liberado en febrero del 2019. El ftp con la data la puede encontrar [acá] (ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13)
 
 ### Reads:
 
 Los reads están alojados en las carpetas de su grupo en el servidor del curso.
-De todas maneras, si los quiere descargar puede encontrar los links [acá](http://www.ncbi.nlm.nih.gov/sra/?term=SRP009826) y descargarlos utilizando la suite de NCBI-SRA [sra-tools](https://www.ncbi.nlm.nih.gov/sra/docs/toolkitsoft/).
+De todas maneras, si los quiere descargar puede encontrar los id en la [tabla] (https://www.ebi.ac.uk/gxa/experiments-content/E-GEOD-103170/resources/ExperimentDesignFile.RnaSeq/experiment-design) \(SRR5984243-SRR5984254\) y descargarlos utilizando la suite de NCBI-SRA [sra-tools](https://www.ncbi.nlm.nih.gov/sra/docs/toolkitsoft/), especificamente la herramienta [fasterq-dump] (https://github.com/ncbi/sra-tools/wiki/HowTo:-fasterq-dump).
 
 ### Software:
 
@@ -42,14 +50,15 @@ De todas maneras, si los quiere descargar puede encontrar los links [acá](http:
 - Para generar el conteo a partir de los archivos 'BAM' (que es la forma binaria de un [SAM](https://samtools.github.io/hts-specs/SAMv1.pdf)) 
 utilizaremos [HTSeq](https://htseq.readthedocs.io/en/release_0.11.1/).
 - Para el analisis de expresión diferencial utilizaremos [DESeq2](http://bioconductor.org/packages/release/bioc/html/DESeq2.html).
-- Para finalizar visualizaremos nuestros resultados en el [Integrative Genome Viewer](https://software.broadinstitute.org/software/igv/).
-- Para finalizar visualizaremos nuestros resultados en [Artemis](https://software.broadinstitute.org/software/igv/).
+- Visualizaremos nuestros resultados en el [Integrative Genome Viewer](https://software.broadinstitute.org/software/igv/).
+- Exploraremos un análisis de Enriquecimiento de las categorias [GO] (http://geneontology.org/docs/ontology-documentation/)
 
 # Inicio del Práctico
 
 ## Quality Check de los Reads
 
-Utilizaremos Trim Galore para hacer un quality check y filtrar los reads de las muestras:
+Utilizaremos Trim Galore para hacer un quality check y filtrar los reads de las muestras, entonces para cada grupo de reads ejecutaremos
+la instrucción:
 
 			trim_galore --length 50  --quality 35 <READSFILE.fastq>
 
@@ -152,7 +161,7 @@ Para calcular la expresión diferencial necesitaremos la librería de R [DESeq2]
 
 ### Jupyter-Notebooks
 
-He diseñado [Jupyter Notebooks](https://jupyter.org/) para hacer la clase más dínamica, generalmente los jupyter-notebook se cargan bien en Github, pero si tuviesen algun problema pueden copiar el link del Jupyter-Notebook en:
+He diseñado [Jupyter Notebooks](https://jupyter.org/) para hacer la clase más dinámica, generalmente los jupyter-notebook se cargan bien en Github, pero si tuviesen algun problema pueden copiar el link del Jupyter-Notebook en:
 
 [https://nbviewer.jupyter.org/](https://nbviewer.jupyter.org/)
 
