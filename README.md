@@ -41,13 +41,13 @@ En el artículo, se utilizó la versión [GRCh37] del Genoma Humano, en nuestro 
 ### Reads:
 
 Los reads están alojados en las carpetas de su grupo en el servidor del curso.
-De todas maneras, si los quiere descargar puede encontrar los id en la [tabla](https://www.ebi.ac.uk/gxa/experiments-content/E-GEOD-103170/resources/ExperimentDesignFile.RnaSeq/experiment-design) \(SRR5984243-SRR5984254\) y descargarlos utilizando la suite de NCBI-SRA [sra-tools](https://www.ncbi.nlm.nih.gov/sra/docs/toolkitsoft/), especificamente la herramienta [fasterq-dump](https://github.com/ncbi/sra-tools/wiki/HowTo:-fasterq-dump).
+De todas maneras, si los quiere descargar puede encontrar los id en la [tabla](https://www.ebi.ac.uk/gxa/experiments-content/E-GEOD-103170/resources/ExperimentDesignFile.RnaSeq/experiment-design) \(SRR5984243-SRR5984254\) y descargarlos utilizando la suite de NCBI-SRA [sra-tools](https://github.com/ncbi/sra-tools), especificamente la herramienta [fasterq-dump](https://github.com/ncbi/sra-tools/wiki/HowTo:-fasterq-dump).
 
 ### Software:
 
 - Para el filtrado de los reads utilizaremos [TrimGalore](https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md).
 - Para el alineamiento de los reads filtrados utilizaremos [STAR](https://github.com/alexdobin/STAR).
-- Para generar el conteo a partir de los archivos 'BAM' (que es la forma binaria de un [SAM](https://samtools.github.io/hts-specs/SAMv1.pdf)) 
+- Para generar el conteo a partir de los archivos 'BAM' (que es la forma binaria de un [SAM](https://samtools.github.io/hts-specs/SAMv1.pdf))
 utilizaremos [HTSeq](https://htseq.readthedocs.io/en/release_0.11.1/).
 - Para el analisis de expresión diferencial utilizaremos [DESeq2](http://bioconductor.org/packages/release/bioc/html/DESeq2.html).
 - Visualizaremos nuestros resultados en el [Integrative Genome Viewer](https://software.broadinstitute.org/software/igv/).
@@ -83,8 +83,8 @@ El resultado del comando nos entregará los reads filtrados con extensión `trim
 
 Para mapear los reads al genoma de referencia los alineadores deben generar un índice del genoma. Esto permite que el proceso de mapear millones de reads se haga de forma eficiente.
 
-La carpeta `/home/<GRUPO>/RNA_SEQ/Genome/` (donde `<GRUPO>` es el identificador de su grupo) contiene los archivos del genoma de la soya, el archivo fasta de
-los cromosomas y la anotación de los genes en formato `GTF`. Estos fueron  descargados desde el [ftp de NCBI](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/004/515/GCF_000004515.5_Glycine_max_v2.1)
+La carpeta `/home/<GRUPO>/RNA_SEQ/Genome/` (donde `<GRUPO>` es el identificador de su grupo) contiene los archivos del genoma humano, el archivo fasta de
+los cromosomas y la anotación de los genes en formato `GTF`. Estos fueron  descargados desde el [ftp de NCBI](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13)
 
 
  `STAR` genera el índice  de la siguiente manera:
@@ -137,7 +137,7 @@ en un simple archivo de abundancia de reads por gen. Para esto utilizaremos [HTS
 		 htseq-count -s no -r pos -t exon -f bam  <BAMFILE> <GTF> > <SALIDA>
 
 Ok, acabamos de terminar de trabajar con los grandes volumenes de datos de secuenciación y hemos terminado con un archivo 
-pequeño que contiene los reads mapeados a cada genoma. Esto puede ser trabajado en su computador personal.
+pequeño que contiene los reads de cada experimento mapeados al genoma de referencia. Esto puede ser trabajado en su computador personal.
 
 ## Instalación de R en su computador
 
