@@ -170,13 +170,28 @@ en un simple archivo de abundancia de reads por gen. Para esto utilizaremos [HTS
 Ok, acabamos de terminar de trabajar con los grandes volúmenes de datos de secuenciación, hemos terminado con un archivo 
 pequeño que contiene los reads de cada experimento mapeados al genoma de referencia. Esto puede ser trabajado en su computador personal.
 
+Para esto tendrá que ejecutar un scp desde el servidor hasta una carpeta de su computador. __Esta carpeta será importante porque se la 
+entregaremos a DESeq2 para que haga los cálculos de expresión diferencial a partir de nuestros conteos.__
+Por ejemplo en un computador con un sistema basado en UNIX podría generar una carpeta en su home llamada RNASEQ
+
+```bash
+	mkdir /home/<usuario>/RNASEQ
+```
+
+donde `<usuario>` es su nombre de usuario.
+
+
+```bash
+	scp dbio<N>@bio-5.cmm.uchile.cl:RNASEQ/*.htcounts.out /home/<usuario>/RNASEQ/
+```
+Donde `<N>` es el número de su grupo y `<usuario>` es el nombre de la carpeta.
+
+
 ## Instalación de R en su computador
 
 #### Nota: Si ya tiene instalado R, en su computador puede omitir este paso.
 
 R es un lenguaje y ambiente para realizar estadística computacional. Puede obtener más información desde la [página del proyecto](https://www.r-project.org/)
-
-
 
 Descargar [R-base](https://www.r-project.org/)
 
@@ -186,15 +201,23 @@ R tiene diversos webservers y servidores que guardan información y versiones de
 
 Para bioinformática existe un repositorio particular de código de R que se llama [Bioconductor](https://www.bioconductor.org/)
 
-## Cálculo de expresión diferencial
+## Preparando para el Cálculo de Expresión Diferencial
+
+Lo siguientes bloques de código será código a ejecutar en RStudio:
+
+
+Necesitaremos unas bibliotecas para graficar:
+
+```R
+install.packages("RColorBrewer")
+install.packages("gplots")
+install.packages("ggplot2")
+```
 
 Para calcular la expresión diferencial necesitaremos la librería de R [DESeq2](https://www.bioconductor.org/packages/release/bioc/html/DESeq2.html). La publicación que detalla la metodología implementada en DESeq2 la puede encontrar [acá](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4302049/pdf/13059_2014_Article_550.pdf)
 
 
-Lo siguiente será código a ejecutar en RStudio:
-
-
-Para instalar las librerías ejecute el siguiente código:
+Para instalar los paquetes ejecute el siguiente código:
 
 ```R
 if (!requireNamespace("BiocManager", quietly = TRUE))
@@ -204,7 +227,7 @@ BiocManager::install("biomaRt")
 BiocManager::install("DESeq2")
 ```
 
-
+Instalados los paquetes procederemos a cargar nuestros datos desde 
 
 
 
