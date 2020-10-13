@@ -196,10 +196,14 @@ Lo siguiente será código a ejecutar en RStudio:
 
 Para instalar las librerías ejecute el siguiente código:
 
-	if (!requireNamespace("BiocManager", quietly = TRUE))
-		install.packages("BiocManager")
+```R
+if (!requireNamespace("BiocManager", quietly = TRUE))
+	install.packages("BiocManager")
 
-	BiocManager::install("biomaRt")
+BiocManager::install("biomaRt")
+BiocManager::install("DESeq2")
+```
+
 
 
 
