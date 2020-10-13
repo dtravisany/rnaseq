@@ -20,11 +20,18 @@ Se realizarán las siguientes tareas:
 Una buena fuente de Datos de Expresion es el [Gene Expression Atlas](https://www.ebi.ac.uk/gxa/home) de [EBI](https://www.ebi.ac.uk)
 
 En este tutorial utilizaremos datos descargados desde Genbank, encontrados en este Atlas.
-Corresponde a datos del artículo [Reversal of Sepsis‐Like Features of Neutrophils by Interleukin‐1 Blockade in Patients With Systemic‐Onset Juvenile Idiopathic Arthritis](https://onlinelibrary.wiley.com/doi/full/10.1002/art.40442)
-Puede descargar la tabla con la descripción de los datos [aquí](https://www.ebi.ac.uk/gxa/experiments-content/E-GEOD-103170/resources/ExperimentDesignFile.RnaSeq/experiment-design)
 
-Corresponde a 12 RNA-Seq de 6 individuos humanos. 
-Será su responsabilidad darle contexto a los Datos de la investigación.
+| Link | Nombre |   
+| ----- | ---- |
+|https://www.ebi.ac.uk/gxa/experiments/E-GEOD-33294/Experiment%20Design |	Transcriptome sequencing of human hepatocellular carcinoma |
+https://www.ebi.ac.uk/gxa/experiments/E-GEOD-54505/Experiment%20Design  |	TWIST1-induced microRNA-424 drives an intermediate epithelial-to-mesenchymal transition that opposes metastasis | 
+https://www.ebi.ac.uk/gxa/experiments/E-GEOD-62854/Experiment%20Design	| Transcription profiling by high throughput sequencing in PER2 mutant of human endometrial stromal cells |
+https://www.ebi.ac.uk/gxa/experiments/E-GEOD-40131/Experiment%20Design	| Transcription profiling by high throughput sequencing of human monocytes treated with synthetic cationic peptide IDR-1018 |
+https://www.ebi.ac.uk/gxa/experiments/E-GEOD-58326/Experiment%20Design	| Transcription profiling by high throughput sequencing of ZNF217 chromatin occupancy in the breast cancer cell genome |
+https://www.ebi.ac.uk/gxa/experiments/E-GEOD-54846/Experiment%20Design	| RNA-seq from control and macroH2A1-depleted IMR90 primary human lung fibroblasts |
+
+
+
 
 Los datos ya se encuentran en el servidor y no es necesario descargarlos nuevamente, se ponen los link a disposición para que pueda identificar de donde se obtienen los datos en las bases de datos internacionales.
 
