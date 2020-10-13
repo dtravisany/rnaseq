@@ -41,12 +41,6 @@ Los datos ya se encuentran en el servidor y no es necesario descargarlos nuevame
 
 
 
-
-
-
-
-
-
 ### Genoma de Referencia:
 
 Como vimos en clase se necesitan dos datos:
@@ -57,6 +51,9 @@ pero contiene algunas convenciones que son especificas del atributo gene del 'GF
 En el artículo, se utilizó la versión [GRCh37] del Genoma Humano, en nuestro caso utilizaremos la última versión del Genoma correspondiente a la [GRCh38.p13](https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.39) liberado en febrero del 2019. 
 
 El ftp con la data la puede encontrar en el siguiente FTP: ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13
+
+
+
 
 ### Reads:
 
@@ -191,13 +188,23 @@ Para bioinformática existe un repositorio particular de código de R que se lla
 
 ## Cálculo de expresión diferencial
 
-Para calcular la expresión diferencial necesitaremos la librería de R [DESeq2](https://www.bioconductor.org/packages/release/bioc/html/DESeq2.html). La publicación que detalla la metodología implementada en DESeq2 la puede encontrar [acá](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4302049/pdf/13059_2014_Article_550.pdf).
+Para calcular la expresión diferencial necesitaremos la librería de R [DESeq2](https://www.bioconductor.org/packages/release/bioc/html/DESeq2.html). La publicación que detalla la metodología implementada en DESeq2 la puede encontrar [acá](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4302049/pdf/13059_2014_Article_550.pdf)
 
-### Jupyter-Notebooks
 
-He diseñado [Jupyter Notebooks](https://jupyter.org/) para hacer la clase más dinámica, generalmente los jupyter-notebook se cargan bien en Github, pero si tuviesen algun problema pueden copiar el link del Jupyter-Notebook en:
+Lo siguiente será código a ejecutar en RStudio:
 
-[https://nbviewer.jupyter.org/](https://nbviewer.jupyter.org/)
+
+Para instalar las librerías ejecute el siguiente código:
+
+	if (!requireNamespace("BiocManager", quietly = TRUE))
+		install.packages("BiocManager")
+
+	BiocManager::install("biomaRt")
+
+
+
+
+	
 
 
 
