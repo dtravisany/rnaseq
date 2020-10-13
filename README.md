@@ -182,7 +182,7 @@ donde `<usuario>` es su nombre de usuario.
 
 
 ```bash
-	scp dbio<N>@bio-5.cmm.uchile.cl:RNASEQ/*.htcounts.out /home/<usuario>/RNASEQ/
+	scp dbio<N>@bio-5.cmm.uchile.cl:RNASEQ/*.htseq.out /home/<usuario>/RNASEQ/
 ```
 Donde `<N>` es el número de su grupo y `<usuario>` es el nombre de la carpeta.
 
@@ -227,21 +227,140 @@ BiocManager::install("biomaRt")
 BiocManager::install("DESeq2")
 ```
 
-Instalados los paquetes procederemos a cargar nuestros datos desde 
-
-
-
 	
+ Cargaremos todos los paquetes que utilizaremos en el práctico
+ 
+```R
+library("DESeq2")
+```
+
+Establecemos una ubicación donde trabajaremos, esta por conveniencia 
+será la carpeta que definimos anteriormente
+
+```R
+
+carpeta <- "/home/dtravisany/RNASEQ/"
+setwd(carpeta)
+
+```
+
+Donde `dtravisany` es el nombre de usuario
+
+Definiremos un prefijo que le pondremos a todos nuestros archivos de salida del análisis
+
+```R
+
+outputPrefix <- "Practico_RNASEQ_DE"
+
+```
+
+Ahora cargaremos los archivos que estan alojados en la variable carpeta
+
+```R
+sampleFiles<- c("SRR605000_trimmedAligned.sortedByCoord.out.bam.htseq.out",
+                "SRR605001_trimmedAligned.sortedByCoord.out.bam.htseq.out",
+                "SRR605002_trimmedAligned.sortedByCoord.out.bam.htseq.out",
+                "SRR605003_trimmedAligned.sortedByCoord.out.bam.htseq.out",
+                "SRR605004_trimmedAligned.sortedByCoord.out.bam.htseq.out",
+                "SRR605005_trimmedAligned.sortedByCoord.out.bam.htseq.out")
+```
+
+Ahora estableceremos un nombre para cada muestra, lo sacaremos del archivo  
+descargado desde [GXA](https://www.ebi.ac.uk/gxa/)
+
+En este caso he optado por asignar el nombre utilizando Tejido, Número de Paciente y fenotipo
+quedando de la siguiente manera: `Tejido_NumeroPaciente_fenotipo`
+es muy importante que el nombre que pongamos acá este en perfecta relación
+con el nombre de los archivos de arriba, esto hay que revisarlo en la sección
+[Experiment Design](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-41745/Experiment%20Design) o en la tabla [experiment_design](https://www.ebi.ac.uk/gxa/experiments-content/E-GEOD-41745/resources/ExperimentDesignFile.RnaSeq/experiment-design)
+
+```R
+
+sampleNames <- c("skin_1_non_lesional",
+                 "skin_2_non_lesional",
+                 "skin_3_non_lesional",
+                 "skin_1_lesional",
+                 "skin_2_lesional",
+                 "skin_3_lesional")
+
+```
+
+Ahora estableceremos las condiciones de cada muestra 
+
+```R
+
+sampleCondition <- c("non-lesional","non-lesional","non-lesional","lesional","lesional","lesional")
+
+```
+Agregaremos toda esta info a un Data Frame (Tabla)
+
+```R
+
+sampleTable <- data.frame(sampleName = sampleNames, fileName = sampleFiles, condition = sampleCondition)
+
+```
+
+Estableceremos cuales son los tratamientos:
+```R
+
+treatments = c("non-lesional","lesional")
+
+```
 
 
+__Hasta ahora solo hemos preparado los datos para realizar 
+ la expresión diferencial.__
 
 
+# Expresión diferencial
+
+Como utilizamos htseq para realizar los conteos, 
+podremos acceder a comandos especiales de __DESeq2__ para el tratamiento
+desde archivos de conteo provenientes de este software. 
+Es útil ver el [manual para esta sección](http://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html#htseq-count-input)
+
+#entregamos el dataframe, la carpeta que establecimos al principio
+ y las condiciones que estan en la tabla como condition.
+
+```R
+
+ddsHTSeq <- DESeqDataSetFromHTSeqCount(sampleTable = sampleTable,
+                                       directory = carpeta,
+                                       design = ~ condition)
+colData(ddsHTSeq)$condition <- factor(colData(ddsHTSeq)$condition,
+                                      levels = treatments)
 
 
+```
+
+Ahora ejecutamos la expresión Diferencial:
+
+```R
+dds <- DESeq(ddsHTSeq)
+res <- results(dds)
+
+```
+Ahora sacaremos los genes DE con un p-valor 
+ajustado < 0.05 y ordenados de menor p-valor-ajustado a mayor p-valor-ajustado:
+
+```R
+
+res= subset(res, padj<0.05)
+res <- res[order(res$padj),]
+
+```
+
+Guardaremos nuestros resultados en archivos CSV.
 
 
+```R
+resdata <- merge(as.data.frame(res), as.data.frame(counts(dds,normalized =TRUE)), by = 'row.names', sort = FALSE)
+names(resdata)[1] <- 'gene'
+write.csv(resdata, file = paste0(outputPrefix, "-resultados-normalizados.csv"))
 
+# Conteos Normalizados compatibles con GSEA.
 
+write.table(as.data.frame(counts(dds),normalized=T), file = paste0(outputPrefix, "_conteos_normalizados.txt"), sep = '\t')
 
-
+```
 
