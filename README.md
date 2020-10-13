@@ -20,20 +20,31 @@ Se realizarán las siguientes tareas:
 Una buena fuente de Datos de Expresion es el [Gene Expression Atlas](https://www.ebi.ac.uk/gxa/home) de [EBI](https://www.ebi.ac.uk)
 
 En este tutorial utilizaremos datos descargados desde Genbank, encontrados en este Atlas.
+| Link | Nombre |   
+| ----- | ---- |
+|[E-GEOD-41745](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-41745/)| Transcriptional Profiling of Psoriasis Using RNA-seq Reveals Previously Unidentified Differentially Expressed genes |
+
+
+Ustedes utilizaran los siguientes datos:
+
 
 | Link | Nombre |   
 | ----- | ---- |
-|https://www.ebi.ac.uk/gxa/experiments/E-GEOD-33294/Experiment%20Design |	Transcriptome sequencing of human hepatocellular carcinoma |
-https://www.ebi.ac.uk/gxa/experiments/E-GEOD-54505/Experiment%20Design  |	TWIST1-induced microRNA-424 drives an intermediate epithelial-to-mesenchymal transition that opposes metastasis | 
-https://www.ebi.ac.uk/gxa/experiments/E-GEOD-62854/Experiment%20Design	| Transcription profiling by high throughput sequencing in PER2 mutant of human endometrial stromal cells |
-https://www.ebi.ac.uk/gxa/experiments/E-GEOD-40131/Experiment%20Design	| Transcription profiling by high throughput sequencing of human monocytes treated with synthetic cationic peptide IDR-1018 |
-https://www.ebi.ac.uk/gxa/experiments/E-GEOD-58326/Experiment%20Design	| Transcription profiling by high throughput sequencing of ZNF217 chromatin occupancy in the breast cancer cell genome |
-https://www.ebi.ac.uk/gxa/experiments/E-GEOD-54846/Experiment%20Design	| RNA-seq from control and macroH2A1-depleted IMR90 primary human lung fibroblasts |
+|[E-GEOD-33294](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-33294/) |	Transcriptome sequencing of human hepatocellular carcinoma |
+|[E-GEOD-54505](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-54505/)  |	TWIST1-induced microRNA-424 drives an intermediate epithelial-to-mesenchymal transition that opposes metastasis | 
+|[E-GEOD-62854](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-62854/)	| Transcription profiling by high throughput sequencing in PER2 mutant of human endometrial stromal cells |
+|[E-GEOD-40131](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-40131/)	| Transcription profiling by high throughput sequencing of human monocytes treated with synthetic cationic peptide IDR-1018 |
+|[E-GEOD-58326](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-58326/)	| Transcription profiling by high throughput sequencing of ZNF217 chromatin occupancy in the breast cancer cell genome |
+|[E-GEOD-54846](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-54846/)	| RNA-seq from control and macroH2A1-depleted IMR90 primary human lung fibroblasts |
+
+Los datos ya se encuentran en el servidor y no es necesario descargarlos nuevamente, se ponen los link a disposición para que pueda identificar de donde se obtienen los datos en las bases de datos internacionales y para que puedan descargar metadata y artículo asociado a la investigación.
 
 
 
 
-Los datos ya se encuentran en el servidor y no es necesario descargarlos nuevamente, se ponen los link a disposición para que pueda identificar de donde se obtienen los datos en las bases de datos internacionales.
+
+
+
 
 
 ### Genoma de Referencia:
