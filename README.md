@@ -13,7 +13,9 @@ Se realizarán las siguientes tareas:
 - Alineamiento de los reads a un genoma de referencia.
 - Conversión de los archivos a conteo por genes.
 - Analisis de los conteos con DeSeq2.
-- Enriquecimiento de Categorías GO.
+- Enriquecimiento de Categorías __GO__.
+- Gene Set Enrichment Analysis __GSEA__.
+
  
 ## Materiales:
 
@@ -366,4 +368,11 @@ write.csv(resdata, file = paste0(outputPrefix, "-resultados-normalizados.csv"))
 write.table(as.data.frame(counts(dds),normalized=T), file = paste0(outputPrefix, "_conteos_normalizados.txt"), sep = '\t')
 
 ```
+
+Ahora tendremos dos archivos, el primero es nuestra expresión diferencial:
+
+El archivo de conteos lo cargaremos en GSEA. Para esto es necesario descargar GSEA:
+
+Debe darse de alta en la página para descargarlo [aquí] (https://www.gsea-msigdb.org/gsea/login.jsp;jsessionid=BAC11AAEE4F5A8DD48442F7AECEF0BE9).
+
 
