@@ -369,10 +369,13 @@ write.table(as.data.frame(counts(dds),normalized=T), file = paste0(outputPrefix,
 
 ```
 
-Ahora tendremos dos archivos, el primero es nuestra expresión diferencial:
+Ahora tendremos dos archivos, el primero es nuestra expresión diferencial (PREFIX-resultados-normalizados.csv):
+
+
+
 
 El archivo de conteos lo cargaremos en GSEA. Para esto es necesario descargar GSEA:
 
-Debe darse de alta en la página para descargarlo [aquí] (https://www.gsea-msigdb.org/gsea/login.jsp;jsessionid=BAC11AAEE4F5A8DD48442F7AECEF0BE9).
+Debe darse de alta en la página para descargarlo [aquí](https://www.gsea-msigdb.org/gsea/login.jsp;jsessionid=BAC11AAEE4F5A8DD48442F7AECEF0BE9).
 
 
