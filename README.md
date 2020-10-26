@@ -33,12 +33,11 @@ Ustedes utilizaran los siguientes datos:
 |1|[E-GEOD-33294](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-33294/) |	Transcriptome sequencing of human hepatocellular carcinoma |
 |2|[E-GEOD-54505](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-54505/)  |	TWIST1-induced microRNA-424 drives an intermediate epithelial-to-mesenchymal transition that opposes metastasis | 
 |3|[E-GEOD-62854](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-62854/)	| Transcription profiling by high throughput sequencing in PER2 mutant of human endometrial stromal cells |
-|4|[E-GEOD-40131](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-40131/)	| Transcription profiling by high throughput sequencing of human monocytes treated with synthetic cationic peptide IDR-1018 |
-|5|[E-GEOD-58326](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-58326/)	| Transcription profiling by high throughput sequencing of ZNF217 chromatin occupancy in the breast cancer cell genome |
-|6|[E-GEOD-54846](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-54846/)	| RNA-seq from control and macroH2A1-depleted IMR90 primary human lung fibroblasts |
+|4|[E-GEOD-58326](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-58326/)	| Transcription profiling by high throughput sequencing of ZNF217 chromatin occupancy in the breast cancer cell genome |
+|5|[E-GEOD-54846](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-54846/)	| RNA-seq from control and macroH2A1-depleted IMR90 primary human lung fibroblasts |
+|6|[E-GEOD-40131](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-40131/)	| Transcription profiling by high throughput sequencing of human monocytes treated with synthetic cationic peptide IDR-1018 * Reads de 34bp |
 
 Los datos ya se encuentran en el servidor y no es necesario descargarlos nuevamente, se ponen los link a disposición para que pueda identificar de donde se obtienen los datos en las bases de datos internacionales y para que puedan descargar metadata y artículo asociado a la investigación.
-
 
 
 ### Genoma de Referencia:
@@ -106,6 +105,8 @@ Luego utilizando está lista, ejecutamos el script que programé que permite eje
 
 ## Alineamiento / Mapeo de los reads al genoma de referencia.
 
+# Importante esto no se debe ejecutar en el servidor, Generar el índice demora mucho tiempo y ya está construido. Esta sección es para que sepan como se hace.
+
 ### Generación de un índice del Genoma
 
 Para mapear los reads al genoma de referencia los alineadores deben generar un índice del genoma. Esto permite que el proceso de mapear millones de reads se haga de forma eficiente.
@@ -136,13 +137,15 @@ Con respecto a las opciones/parámetros utilizadas:
 | `--runThreadN` | total de hebras que se ejecutaran en paralelo, este número no debe sobrepasar la cantidad de cores que tiene un computador y pruebas de escalamiento deberian ser ejecutadas para calcular el óptimo |
 
 
+#Desde esta sección se comienza a ejecutar el práctico
+
 ### Mapping
 
 Dado que se genera el índice de los cromosomas y el genoma, ahora debemos proceder a mapear los reads que pasaron los filtros de calidad.
 
 Para eso `STAR` utiliza:
 
-	STAR --genomeDir /home/<GRUPO>/RNASEQ/Genome/ --readFilesIn READSFILE_sra.trimmed.fq --runThreadN 8 --outSAMtype BAM SortedByCoordinate --outFileNamePrefix READSFILE_sra.trimmed
+	STAR --genomeDir /home/<GRUPO>/RNASEQ/Genome/ --readFilesIn READSFILE.trimmed.fq --runThreadN 8 --outSAMtype BAM SortedByCoordinate --outFileNamePrefix READSFILE.trimmed
 
 | Parámetro | Descripción |
 | ---- | ---- |
