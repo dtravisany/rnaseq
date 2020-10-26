@@ -137,7 +137,7 @@ Con respecto a las opciones/parámetros utilizadas:
 | `--runThreadN` | total de hebras que se ejecutaran en paralelo, este número no debe sobrepasar la cantidad de cores que tiene un computador y pruebas de escalamiento deberian ser ejecutadas para calcular el óptimo |
 
 
-#Desde esta sección se comienza a ejecutar el práctico
+# Reanudamos el práctico
 
 ### Mapping
 
