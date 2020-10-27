@@ -373,9 +373,13 @@ Ahora tendremos dos archivos, el primero es nuestra expresión diferencial (OUTP
 
 Para el enriquecimiento utilizaremos la herramienta [GOrilla](http://cbl-gorilla.cs.technion.ac.il/)
 
+En GOrilla ajecutaremos el Enrichment Analysis para las categorias GO. 
+### En el informe deberá interpretar los resultados de las 3 categorias [Molecular Function, Biological Process y Cellular Component](http://geneontology.org/docs/ontology-documentation/).
 
-El archivo de conteos lo cargaremos en GSEA. Para esto es necesario descargar GSEA:
 
-Debe darse de alta en la página para descargarlo [aquí](https://www.gsea-msigdb.org/gsea/login.jsp;jsessionid=BAC11AAEE4F5A8DD48442F7AECEF0BE9).
+
+
+El archivo de conteos lo cargaremos en GSEA. Para esto es necesario descargar GSEA. (Debe darse de alta en la página para descargarlo [aquí](https://www.gsea-msigdb.org/gsea/login.jsp;jsessionid=BAC11AAEE4F5A8DD48442F7AECEF0BE9)).
+
 
 
