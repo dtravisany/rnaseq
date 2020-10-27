@@ -114,7 +114,8 @@ Luego utilizando está lista, ejecutamos el script que programé que permite eje
 Para mapear los reads al genoma de referencia los alineadores deben generar un índice del genoma. Esto permite que el proceso de mapear millones de reads se haga de forma eficiente.
 
 La carpeta `/home/<GRUPO>/RNASEQ/Genome/` contiene los archivos del genoma humano, el archivo fasta de
-los cromosomas y la anotación de los genes en formato `GTF`. Estos fueron  descargados desde el [ftp de NCBI](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13)
+los cromosomas y la anotación de los genes en formato `GTF`. Estos fueron  descargados desde el ftp de NCBI: 
+ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13
 
 Dado que la indexación del genoma humano demora tiempo, es recomendable crear una nueva screen como en los prácticos anteriores:
 
@@ -372,6 +373,13 @@ write.table(table, col.names=NA, quote=FALSE, file = paste0(outputPrefix, "_cont
 Ahora tendremos dos archivos, el primero es nuestra expresión diferencial (OUTPUTPREFIX-resultados-normalizados.csv):
 
 Para el enriquecimiento utilizaremos la herramienta [GOrilla](http://cbl-gorilla.cs.technion.ac.il/)
+
+Sacamos desde el archivo OUTPUTPREFIX-resultados-normalizados.csv, la columna de genes y la copiamos en GOrilla.
+
+![OutputPrefix-resultados-normalizados.csv](imgs/FiguraColGene.png "OutputPrefix-resultados-normalizados.csv")
+
+
+
 
 En GOrilla ajecutaremos el Enrichment Analysis para las categorias GO. 
 ### En el informe deberá interpretar los resultados de las 3 categorias [Molecular Function, Biological Process y Cellular Component](http://geneontology.org/docs/ontology-documentation/).
