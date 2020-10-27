@@ -374,14 +374,20 @@ Ahora tendremos dos archivos, el primero es nuestra expresión diferencial (OUTP
 
 Para el enriquecimiento utilizaremos la herramienta [GOrilla](http://cbl-gorilla.cs.technion.ac.il/)
 
-Sacamos desde el archivo OUTPUTPREFIX-resultados-normalizados.csv, la columna de genes y la copiamos en GOrilla.
+Sacamos desde el archivo OUTPUTPREFIX-resultados-normalizados.csv, la columna de genes.
 
 ![OutputPrefix-resultados-normalizados.csv](imgs/FiguraColGene.png "OutputPrefix-resultados-normalizados.csv")
 
-
-
-
 En GOrilla ajecutaremos el Enrichment Analysis para las categorias GO. 
+
+![GOrilla](imgs/FiguraGorilla.png "Gorilla")
+En step 1, donde está la flecha roja, seleccionamos _Homo sapiens_.
+En step 2, donde está la flecha amarilla, seleccionamos Single ranked list of genes.
+En step 3, donde está la flecha verde, pegamos la columna copiada desde nuestro archivo en el paso anterior y borramos "genes".
+En step 4, donde está la fecha azul, seleccionamos todas las ontologías.
+Donde indica la flecha naranja apretar el boton Search Enriched GO terms
+<span style="color:red">some **This is Red Bold.** text</span>
+
 ### En el informe deberá interpretar los resultados de las 3 categorias [Molecular Function, Biological Process y Cellular Component](http://geneontology.org/docs/ontology-documentation/).
 
 El archivo de conteos lo cargaremos en GSEA. Para esto es necesario descargar GSEA. (Debe darse de alta en la página para descargarlo [aquí](https://www.gsea-msigdb.org/gsea/login.jsp;jsessionid=BAC11AAEE4F5A8DD48442F7AECEF0BE9)).
