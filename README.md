@@ -51,7 +51,7 @@ pero contiene algunas convenciones que son especificas del atributo gene del 'GF
 
 En el artículo, se utilizó la versión [GRCh37] del Genoma Humano, en nuestro caso utilizaremos la última versión del Genoma correspondiente a la [GRCh38.p13](https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.39) liberado en febrero del 2019. 
 
-El ftp con la data la puede encontrar en el siguiente FTP: ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13
+El ftp con la data la puede encontrar en el siguiente [FTP](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13)
 
 
 
@@ -376,10 +376,6 @@ Para el enriquecimiento utilizaremos la herramienta [GOrilla](http://cbl-gorilla
 En GOrilla ajecutaremos el Enrichment Analysis para las categorias GO. 
 ### En el informe deberá interpretar los resultados de las 3 categorias [Molecular Function, Biological Process y Cellular Component](http://geneontology.org/docs/ontology-documentation/).
 
-
-
-
 El archivo de conteos lo cargaremos en GSEA. Para esto es necesario descargar GSEA. (Debe darse de alta en la página para descargarlo [aquí](https://www.gsea-msigdb.org/gsea/login.jsp;jsessionid=BAC11AAEE4F5A8DD48442F7AECEF0BE9)).
-
 
 
