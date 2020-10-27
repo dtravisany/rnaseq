@@ -361,11 +361,11 @@ Guardaremos nuestros resultados en archivos CSV.
 ```R
 resdata <- merge(as.data.frame(res), as.data.frame(counts(dds,normalized =TRUE)), by = 'row.names', sort = FALSE)
 names(resdata)[1] <- 'gene'
-write.csv(resdata, file = paste0(outputPrefix, "-resultados-normalizados.csv"))
+write.csv(resdata,quote=FALSE, row.names=FALSE, file = paste0(outputPrefix, "-resultados-normalizados.csv"))
 
 # Conteos Normalizados compatibles con GSEA.
-
-write.table(as.data.frame(counts(dds),normalized=T), file = paste0(outputPrefix, "_conteos_normalizados.txt"), sep = '\t')
+table=as.data.frame(counts(dds),normalized=T)
+write.table(table, col.names=NA, quote=FALSE, file = paste0(outputPrefix, "_conteos_normalizados.txt"), sep = '\t')
 
 ```
 
