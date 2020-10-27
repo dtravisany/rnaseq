@@ -381,13 +381,13 @@ Sacamos desde el archivo OUTPUTPREFIX-resultados-normalizados.csv, la columna de
 En GOrilla ajecutaremos el Enrichment Analysis para las categorias GO. 
 
 ![GOrilla](imgs/FiguraGOrilla.png "GOrilla")
-<ol>
-<li> En step 1, donde está la flecha <- roja, seleccionamos _Homo sapiens_.</li>
+<ul>
+<li> En step 1, donde está la ![#f03c15]flecha <- roja, seleccionamos _Homo sapiens_.</li>
 <li> En step 2, donde está la flecha <- calipso, seleccionamos Single ranked list of genes.</li>
 <li> En step 3, donde está la flecha <- verde, pegamos la columna copiada desde nuestro archivo en el paso anterior y borramos "genes".</li>
 <li> En step 4, donde está la fecha azul, seleccionamos todas las ontologías.</li>
 <li> Donde indica la flecha naranja apretar el boton Search Enriched GO terms.</li>
-</ol>
+</ul>
 
 ### En el informe deberá interpretar los resultados de las 3 categorias [Molecular Function, Biological Process y Cellular Component](http://geneontology.org/docs/ontology-documentation/).
 
