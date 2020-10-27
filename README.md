@@ -12,9 +12,9 @@ Se realizarán las siguientes tareas:
 - Control de Calidad de los reads.
 - Alineamiento de los reads a un genoma de referencia.
 - Conversión de los archivos a conteo por genes.
-- Analisis de los conteos con DeSeq2.
-- Enriquecimiento de Categorías __GO__.
-- Gene Set Enrichment Analysis __GSEA__.
+- Analisis de los conteos con [__DeSeq2__](https://bioconductor.org/packages/release/bioc/html/DESeq2.html).
+- Enriquecimiento de Categorías [__GO__](http://geneontology.org/).
+- Gene Set Enrichment Analysis [__GSEA__](https://www.gsea-msigdb.org/gsea).
 
  
 ## Materiales:
@@ -371,7 +371,7 @@ write.table(as.data.frame(counts(dds),normalized=T), file = paste0(outputPrefix,
 
 Ahora tendremos dos archivos, el primero es nuestra expresión diferencial (PREFIX-resultados-normalizados.csv):
 
-
+Para el enriquecimiento utilizaremos la herramienta GOrilla (http://cbl-gorilla.cs.technion.ac.il/)
 
 
 El archivo de conteos lo cargaremos en GSEA. Para esto es necesario descargar GSEA:
