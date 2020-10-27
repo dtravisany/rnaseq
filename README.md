@@ -369,9 +369,9 @@ write.table(as.data.frame(counts(dds),normalized=T), file = paste0(outputPrefix,
 
 ```
 
-Ahora tendremos dos archivos, el primero es nuestra expresión diferencial (PREFIX-resultados-normalizados.csv):
+Ahora tendremos dos archivos, el primero es nuestra expresión diferencial (OUTPUTPREFIX-resultados-normalizados.csv):
 
-Para el enriquecimiento utilizaremos la herramienta GOrilla (http://cbl-gorilla.cs.technion.ac.il/)
+Para el enriquecimiento utilizaremos la herramienta [GOrilla](http://cbl-gorilla.cs.technion.ac.il/)
 
 
 El archivo de conteos lo cargaremos en GSEA. Para esto es necesario descargar GSEA:
