@@ -401,21 +401,61 @@ En mi caso (UBUNTU 18.04 LTS) descargué la versión `GSEA_Linux_4.1.0.zip`.
 
 Descomprima GSEA y ejecútelo, en mi caso lo ejecuté desde un terminal entrando a la carpeta descomprimida y ejecutando: `sh gsea.sh`
 
-Cargue los datos en GSEA, no debe haber error:
+#### Cargue los datos en GSEA: 
 
 ![FiguraGSEA1.png](imgs/FiguraGSEA1.png "FiguraGSEA1.csv")
+
+
+#### No debe haber error:
 ![FiguraGSEA2.png](imgs/FiguraGSEA2.png "FiguraGSEA2.csv")
+
+#### Haga Click en Run GSEA y  en Expression Dataset seleccione el archivo que cargó y en Gene set database seleccione la primera opcion: 
+Una descripción de las opciones la puede encontrar [acá](https://www.gsea-msigdb.org/gsea/msigdb/collections.jsp). Siéntase libre de repetir esta parte explorando otras colecciones como ubicaciones en bandas citogenéticas.
+
 ![FiguraGSEA3.png](imgs/FiguraGSEA3.png "FiguraGSEA3.csv")
+
+#### En Select a Phenotype seleccione Create an on-the-fly phenotype:
+
 ![FiguraGSEA4.png](imgs/FiguraGSEA4.png "FiguraGSEA4.csv")
+
+#### Debe rellenar la información de las clases A y B en este caso LESIONAL y NON_LESIONAL, además de las muestras que tienen las condiciones:
+
 ![FiguraGSEA5.png](imgs/FiguraGSEA5.png "FiguraGSEA5.csv")
+
+#### Debe Cargarse Exitosamente:
+
 ![FiguraGSEA6.png](imgs/FiguraGSEA6.png "FiguraGSEA6.csv")
+
+
+#### Ahora Seleccione un tipo de comparación VS:
+
 ![FiguraGSEA7.png](imgs/FiguraGSEA7.png "FiguraGSEA7.csv")
-![FiguraGSEA8.png](imgs/FiguraGSEA8.png "FiguraGSEA8.csv")
+
+#### En Collapse/Remp to gene symbols seleccione No_Collapse: 
+
 ![FiguraGSEA9.png](imgs/FiguraGSEA9.png "FiguraGSEA9.csv")
+
+#### En Select Chip seleccione el chip Human_RefSeq_Accession_MSigDB.v7.2.chip:
+
 ![FiguraGSEA10.png](imgs/FiguraGSEA10.png "FiguraGSEA10.csv")
+
+#### Hacer click en |> RUN  en el menú de abajo, después de unos instantes comenzará a descargarse el chip y verá en el borde inferior izquierdo en la sección GSEA Reports el status Running en azul.
+
 ![FiguraGSEA11.png](imgs/FiguraGSEA11.png "FiguraGSEA11.csv")
+
+#### Al terminar el status deberá decir Success en verde:
+
 ![FiguraGSEA12.png](imgs/FiguraGSEA12.png "FiguraGSEA12.csv")
+
+#### Al hacer click en el status deberá aparecer un reporte como el siguiente:
+
 ![FiguraGSEA13.png](imgs/FiguraGSEA13.png "FiguraGSEA13.csv")
+
+
+
+Ahora deberá describir algunas categorias en su informe así como mostrar algunos Blue-Pink O'Gram de las categorias HallMark.
+
+
 
 
 
