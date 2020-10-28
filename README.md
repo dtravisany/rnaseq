@@ -410,7 +410,7 @@ Acá puede ver uno de los resultados de GOrilla para Celullar Component:
 ![FiguraGOrilla2.png](imgs/FiguraGOrilla2.png "FiguraGOrilla2.csv")
 
 
-Podemos ver que una de las categorías enriquecidas corresponde a cornified envelope: El experimento que estamos analizando es de celulas de piel lesionadas y no lesionadas en pacientes con Psoriasis y podemos ver que [Cornified Envelope corresponde a un modelo de muerte celular en la piel](https://www.nature.com/articles/nrm1619). Lo que ya nos guía a una interesante discusión.
+Podemos ver que una de las categorías enriquecidas corresponde a cornified envelope: El experimento que estamos analizando es de células de piel lesionadas y no lesionadas en pacientes con Psoriasis y podemos ver que [Cornified Envelope corresponde a un modelo de muerte celular en la piel](https://www.nature.com/articles/nrm1619). Lo que ya nos guía a una interesante discusión.
  
 ### El archivo de conteos lo utilizaremos para realizar un Gene Set Enrichment Analysis: 
 
