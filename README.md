@@ -376,7 +376,13 @@ write.table(table2, sep="\t" , quote=FALSE, row.names = FALSE,  file = paste0(ou
 
 Ahora tendremos dos archivos, el primero es nuestra expresión diferencial (OUTPUTPREFIX-resultados-normalizados.csv):
 
-Para el enriquecimiento utilizaremos la herramienta [GOrilla](http://cbl-gorilla.cs.technion.ac.il/)
+### En su informe deberá describir algunos de los genes diferencialmente expresados que estén relacionados con la investigación y compararlos con los resultados del artículo.
+
+## Enriquecimiento de Categorias GO:
+ 
+Para el enriquecimiento utilizaremos una herramienta simple: [GOrilla](http://cbl-gorilla.cs.technion.ac.il/)
+
+(Si quiere utilizar una herramienta más avanzada puede ir directamente a la página de [GO](www.geneontology.org) y copiar y pegar su lista de genes DE).
 
 Sacamos desde el archivo OUTPUTPREFIX-resultados-normalizados.csv, la columna de genes.
 
@@ -465,8 +471,13 @@ Una descripción de las opciones la puede encontrar [acá](https://www.gsea-msig
 ![FiguraGSEA13.png](imgs/FiguraGSEA13.png "FiguraGSEA13.csv")
 
 
+#### Si nos vamos a snapshot Podremos ver un conjunto de categorías enriquecidas:
 
-Ahora deberá describir algunas categorias en su informe así como mostrar algunos Blue-Pink O'Gram de las categorias HallMark.
+
+![FiguraGSEA14.png](imgs/FiguraGSEA14.png "FiguraGSEA14.csv")
+
+
+Ahora deberá describir algunas categorías enriquecidas en su informe así como mostrar algunos Blue-Pink O'Gram de la colección HallMark y/o alguna otra elegida por usted.
 
 
 
