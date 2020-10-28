@@ -238,6 +238,7 @@ BiocManager::install("DESeq2")
  
 ```R
 library("DESeq2")
+library("data.table")
 ```
 
 Establecemos una ubicación donde trabajaremos, esta por conveniencia 
@@ -366,7 +367,10 @@ write.csv(resdata,quote=FALSE, row.names=FALSE, file = paste0(outputPrefix, "-re
 
 # Conteos Normalizados compatibles con GSEA.
 table=as.data.frame(counts(dds),normalized=T)
-write.table(table, col.names=NA, quote=FALSE, file = paste0(outputPrefix, "_conteos_normalizados.txt"), sep = '\t')
+table2=setDT(table,keep.rownames = TRUE)[]
+colnames(table2)[1]<-"gene"
+
+write.table(table2, sep="\t" , quote=FALSE, row.names = FALSE,  file = paste0(outputPrefix, "_conteos_normalizados.txt"))
 
 ```
 
@@ -389,8 +393,42 @@ En GOrilla ajecutaremos el Enrichment Analysis para las categorias GO.
 <li> Donde indica la flecha naranja apretar el boton Search Enriched GO terms.</li>
 </ul>
 
-### En el informe deberá interpretar los resultados de las 3 categorias [Molecular Function, Biological Process y Cellular Component](http://geneontology.org/docs/ontology-documentation/).
+### En el informe deberá mostrar las figuras e interpretar los resultados de las 3 categorias [Molecular Function, Biological Process y Cellular Component](http://geneontology.org/docs/ontology-documentation/).
 
 El archivo de conteos lo cargaremos en GSEA. Para esto es necesario descargar GSEA. (Debe darse de alta en la página para descargarlo [aquí](https://www.gsea-msigdb.org/gsea/login.jsp;jsessionid=BAC11AAEE4F5A8DD48442F7AECEF0BE9)).
+
+En mi caso (UBUNTU 18.04 LTS) descargué la versión `GSEA_Linux_4.1.0.zip`.
+
+Descomprima GSEA y ejecútelo, en mi caso lo ejecuté desde un terminal entrando a la carpeta descomprimida y ejecutando: `sh gsea.sh`
+
+Cargue los datos en GSEA, no debe haber error:
+
+![FiguraGSEA1.png](imgs/FiguraGSEA1.png "FiguraGSEA1.csv")
+![FiguraGSEA2.png](imgs/FiguraGSEA2.png "FiguraGSEA2.csv")
+![FiguraGSEA3.png](imgs/FiguraGSEA3.png "FiguraGSEA3.csv")
+![FiguraGSEA4.png](imgs/FiguraGSEA4.png "FiguraGSEA4.csv")
+![FiguraGSEA5.png](imgs/FiguraGSEA5.png "FiguraGSEA5.csv")
+![FiguraGSEA6.png](imgs/FiguraGSEA6.png "FiguraGSEA6.csv")
+![FiguraGSEA7.png](imgs/FiguraGSEA7.png "FiguraGSEA7.csv")
+![FiguraGSEA8.png](imgs/FiguraGSEA8.png "FiguraGSEA8.csv")
+![FiguraGSEA9.png](imgs/FiguraGSEA9.png "FiguraGSEA9.csv")
+![FiguraGSEA10.png](imgs/FiguraGSEA10.png "FiguraGSEA10.csv")
+![FiguraGSEA11.png](imgs/FiguraGSEA11.png "FiguraGSEA11.csv")
+![FiguraGSEA12.png](imgs/FiguraGSEA12.png "FiguraGSEA12.csv")
+![FiguraGSEA13.png](imgs/FiguraGSEA13.png "FiguraGSEA13.csv")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
