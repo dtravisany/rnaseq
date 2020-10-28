@@ -446,7 +446,7 @@ Una descripción de las opciones la puede encontrar [acá](https://www.gsea-msig
 ![FiguraGSEA6.png](imgs/FiguraGSEA6.png "FiguraGSEA6.csv")
 
 
-#### Ahora Seleccione un tipo de comparación VS:
+#### Ahora Seleccione un tipo de comparación VS y apretar OK:
 
 ![FiguraGSEA7.png](imgs/FiguraGSEA7.png "FiguraGSEA7.csv")
 
