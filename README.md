@@ -386,7 +386,7 @@ En GOrilla ajecutaremos el Enrichment Analysis para las categorias GO.
 
 ![GOrilla](imgs/FiguraGOrilla.png "GOrilla")
 <ul>
-<li> En step 1, donde está la ![#f03c15]flecha <- roja, seleccionamos _Homo sapiens_.</li>
+<li> En step 1, donde está la flecha <- roja, seleccionamos Homo sapiens.</li>
 <li> En step 2, donde está la flecha <- calipso, seleccionamos Single ranked list of genes.</li>
 <li> En step 3, donde está la flecha <- verde, pegamos la columna copiada desde nuestro archivo en el paso anterior y borramos "genes".</li>
 <li> En step 4, donde está la fecha azul, seleccionamos todas las ontologías.</li>
@@ -395,11 +395,24 @@ En GOrilla ajecutaremos el Enrichment Analysis para las categorias GO.
 
 ### En el informe deberá mostrar las figuras e interpretar los resultados de las 3 categorias [Molecular Function, Biological Process y Cellular Component](http://geneontology.org/docs/ontology-documentation/).
 
-El archivo de conteos lo cargaremos en GSEA. Para esto es necesario descargar GSEA. (Debe darse de alta en la página para descargarlo [aquí](https://www.gsea-msigdb.org/gsea/login.jsp;jsessionid=BAC11AAEE4F5A8DD48442F7AECEF0BE9)).
+
+Acá puede ver uno de los resultados de GOrilla para Celullar Component:
+
+
+
+![FiguraGOrilla2.png](imgs/FiguraGOrilla2.png "FiguraGOrilla2.csv")
+
+
+
+### El archivo de conteos lo utilizaremos para realizar un Gene Set Enrichment Analysis: 
+
+
+El archivo de conteos lo cargaremos en GSEA. Para esto es necesario descargar GSEA. (Debe darse de alta en la página para descargarlo [aquí](https://www.gsea-msigdb.org/gsea/login.jsp)).
 
 En mi caso (UBUNTU 18.04 LTS) descargué la versión `GSEA_Linux_4.1.0.zip`.
 
 Descomprima GSEA y ejecútelo, en mi caso lo ejecuté desde un terminal entrando a la carpeta descomprimida y ejecutando: `sh gsea.sh`
+
 
 #### Cargue los datos en GSEA: 
 
@@ -409,16 +422,16 @@ Descomprima GSEA y ejecútelo, en mi caso lo ejecuté desde un terminal entrando
 #### No debe haber error:
 ![FiguraGSEA2.png](imgs/FiguraGSEA2.png "FiguraGSEA2.csv")
 
-#### Haga Click en Run GSEA y  en Expression Dataset seleccione el archivo que cargó y en Gene set database seleccione la primera opcion: 
+#### Haga Click en Run GSEA y en Expression Dataset seleccione el archivo que cargó y en Gene set database seleccione la primera opcion: 
 Una descripción de las opciones la puede encontrar [acá](https://www.gsea-msigdb.org/gsea/msigdb/collections.jsp). Siéntase libre de repetir esta parte explorando otras colecciones como ubicaciones en bandas citogenéticas.
 
 ![FiguraGSEA3.png](imgs/FiguraGSEA3.png "FiguraGSEA3.csv")
 
-#### En Select a Phenotype seleccione Create an on-the-fly phenotype:
+#### En Select a Phenotype seleccione `Create an on-the-fly phenotype`:
 
 ![FiguraGSEA4.png](imgs/FiguraGSEA4.png "FiguraGSEA4.csv")
 
-#### Debe rellenar la información de las clases A y B en este caso LESIONAL y NON_LESIONAL, además de las muestras que tienen las condiciones:
+#### Debe rellenar la información de las clases A y B en este caso `LESIONAL`  y `NON_LESIONAL`, además de las muestras que tienen las condiciones:
 
 ![FiguraGSEA5.png](imgs/FiguraGSEA5.png "FiguraGSEA5.csv")
 
@@ -431,7 +444,7 @@ Una descripción de las opciones la puede encontrar [acá](https://www.gsea-msig
 
 ![FiguraGSEA7.png](imgs/FiguraGSEA7.png "FiguraGSEA7.csv")
 
-#### En Collapse/Remp to gene symbols seleccione No_Collapse: 
+#### En `Collapse/Remap to gene symbols` seleccione `No_Collapse`: 
 
 ![FiguraGSEA9.png](imgs/FiguraGSEA9.png "FiguraGSEA9.csv")
 
