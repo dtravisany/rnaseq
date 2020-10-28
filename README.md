@@ -12,14 +12,14 @@ Se realizarán las siguientes tareas:
 - Control de Calidad de los reads.
 - Alineamiento de los reads a un genoma de referencia.
 - Conversión de los archivos a conteo por genes.
-- Analisis de los conteos con [__DeSeq2__](https://bioconductor.org/packages/release/bioc/html/DESeq2.html).
+- Análisis de los conteos con [__DeSeq2__](https://bioconductor.org/packages/release/bioc/html/DESeq2.html).
 - Enriquecimiento de Categorías [__GO__](http://geneontology.org/).
 - Gene Set Enrichment Analysis [__GSEA__](https://www.gsea-msigdb.org/gsea).
 
  
 ## Materiales:
 
-Una buena fuente de Datos de Expresion es el [Gene Expression Atlas](https://www.ebi.ac.uk/gxa/home) de [EBI](https://www.ebi.ac.uk)
+Una buena fuente de Datos de Expresión es el [Gene Expression Atlas](https://www.ebi.ac.uk/gxa/home) de [EBI](https://www.ebi.ac.uk)
 
 En este tutorial utilizaremos datos descargados desde Genbank, encontrados en este Atlas.
 | Link | Nombre |   
@@ -27,7 +27,7 @@ En este tutorial utilizaremos datos descargados desde Genbank, encontrados en es
 |[E-GEOD-41745](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-41745/)| Transcriptional Profiling of Psoriasis Using RNA-seq Reveals Previously Unidentified Differentially Expressed genes |
 
 
-Ustedes utilizaran los siguientes datos:
+Ustedes utilizarán los siguientes datos:
 
 
 |Grupo| Link | Nombre |   
@@ -51,15 +51,13 @@ pero contiene algunas convenciones que son especificas del atributo gene del 'GF
 
 En el artículo, se utilizó la versión [GRCh37] del Genoma Humano, en nuestro caso utilizaremos la última versión del Genoma correspondiente a la [GRCh38.p13](https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.39) liberado en febrero del 2019. 
 
-El ftp con la data la puede encontrar en el siguiente [FTP](ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13)
-
-
+El ftp con la data la puede encontrar en el siguiente FTP: ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13 (Ya se encuentra descargado).
 
 
 ### Reads:
 
 Los reads están alojados en las carpetas de su grupo en el servidor del curso.
-De todas maneras, si los quiere descargar puede encontrar los id en la [tabla](https://www.ebi.ac.uk/gxa/experiments-content/E-GEOD-103170/resources/ExperimentDesignFile.RnaSeq/experiment-design) \(SRR5984243-SRR5984254\) y descargarlos utilizando la suite de NCBI-SRA [sra-tools](https://github.com/ncbi/sra-tools), especificamente la herramienta [fasterq-dump](https://github.com/ncbi/sra-tools/wiki/HowTo:-fasterq-dump).
+De todas maneras, si los quiere descargar, puede encontrar los id en el link de su grupo. En el caso de este práctico los reads están en esta [tabla](https://www.ebi.ac.uk/gxa/experiments-content/E-GEOD-41745/resources/ExperimentDesignFile.RnaSeq/experiment-design) \(SRR605000-SRR605005\). Con los ID SRR se pueden descargar utilizando la suite de NCBI-SRA [sra-tools](https://github.com/ncbi/sra-tools), específicamente la herramienta [fasterq-dump](https://github.com/ncbi/sra-tools/wiki/HowTo:-fasterq-dump).
 
 ### Software:
 
@@ -68,8 +66,8 @@ De todas maneras, si los quiere descargar puede encontrar los id en la [tabla](h
 - Para generar el conteo a partir de los archivos 'BAM' (que es la forma binaria de un [SAM](https://samtools.github.io/hts-specs/SAMv1.pdf))
 utilizaremos [HTSeq](https://htseq.readthedocs.io/en/release_0.11.1/).
 - Para el analisis de expresión diferencial utilizaremos [DESeq2](http://bioconductor.org/packages/release/bioc/html/DESeq2.html).
-- Visualizaremos nuestros resultados en el [Integrative Genome Viewer](https://software.broadinstitute.org/software/igv/).
 - Exploraremos un análisis de Enriquecimiento de las categorias [GO](http://geneontology.org/docs/ontology-documentation/)
+- Analizaremos nuestros resultados con [GSEA](https://gsea-msigdb.org).
 
 # Inicio del Práctico
 
