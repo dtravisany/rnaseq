@@ -149,7 +149,9 @@ Dado que se genera el índice de los cromosomas y el genoma, ahora debemos proce
 
 Para eso `STAR` utiliza:
 
-	STAR --genomeDir /home/<GRUPO>/RNASEQ/Genome/ --readFilesIn READSFILE.trimmed.fq --runThreadN 8 --outSAMtype BAM SortedByCoordinate --outFileNamePrefix READSFILE.trimmed
+	STAR --genomeDir /home/<GRUPO>/RNASEQ/Genome/ --readFilesIn <READSFILE>_trimmed.fq --runThreadN 8 --outSAMtype BAM SortedByCoordinate --outFileNamePrefix <READSFILE>_trimmed
+
+Donde `<GRUPO>` es su grupo y <READSFILE> corresponde al id SRR de un archivo FASTQ. Debe ejecutar esto para cada SRR.
 
 | Parámetro | Descripción |
 | ---- | ---- |
@@ -163,7 +165,7 @@ Para eso `STAR` utiliza:
 Para mayor información sobre `STAR` puede visitar el [manual](https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf) 
 
 
-Este proceso generará un archivo `BAM` que tiene los reads mapeados al genoma.
+Este proceso generará un archivo `BAM` que tiene los reads mapeados al genoma. Debera repetir el proceso para cada READSFILE, es decir (un total de 6 veces).
 
 ##Generar los conteos
 
@@ -173,6 +175,16 @@ en un simple archivo de abundancia de reads por gen. Para esto utilizaremos [HTS
 
 
 		 htseq-count -s no -r pos -t exon -f bam  <BAMFILE> <GTF> > <SALIDA>
+
+Donde: `<BAMFILE>` corresponde a un archivo bam de salida del mapeo por STAR. `GTF` es el GTF del genoma que se encuentra en /home/<GRUPO>/RNASEQ/Genome/GRCh38.p13.gtf y `<SALIDA>` será un archivo de salida, en mi caso los nombre:
+<ul>
+<li> `SRR605000_trimmedAligned.sortedByCoord.out.bam.htseq.out`</li>
+<li> `SRR605001_trimmedAligned.sortedByCoord.out.bam.htseq.out`</li>
+<li> `SRR605002_trimmedAligned.sortedByCoord.out.bam.htseq.out`</li>
+<li> `SRR605003_trimmedAligned.sortedByCoord.out.bam.htseq.out`</li>
+<li> `SRR605004_trimmedAligned.sortedByCoord.out.bam.htseq.out`</li>
+<li> `SRR605005_trimmedAligned.sortedByCoord.out.bam.htseq.out`</li>
+</ul>
 
 Ok, acabamos de terminar de trabajar con los grandes volúmenes de datos de secuenciación, hemos terminado con un archivo 
 pequeño que contiene los reads de cada experimento mapeados al genoma de referencia. Esto puede ser trabajado en su computador personal.
