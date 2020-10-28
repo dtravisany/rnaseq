@@ -165,7 +165,7 @@ Donde `<GRUPO>` es su grupo y <READSFILE> corresponde al id SRR de un archivo FA
 Para mayor información sobre `STAR` puede visitar el [manual](https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf) 
 
 
-Este proceso generará un archivo `BAM` que tiene los reads mapeados al genoma. Debera repetir el proceso para cada READSFILE, es decir (un total de 6 veces).
+Este proceso generará un archivo `BAM` que en mi caso queda nombrado: `<READSFILE>_trimmedAligned.sortedByCoord.out.bam` que tiene los reads mapeados al genoma. Debera repetir el proceso para cada READSFILE, es decir (un total de 6 veces).
 
 ##Generar los conteos
 
