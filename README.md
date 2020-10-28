@@ -176,7 +176,7 @@ en un simple archivo de abundancia de reads por gen. Para esto utilizaremos [HTS
 
 		 htseq-count -s no -r pos -t exon -f bam  <BAMFILE> <GTF> > <SALIDA>
 
-Donde: `<BAMFILE>` corresponde a un archivo bam de salida del mapeo por STAR. `GTF` es el GTF del genoma que se encuentra en /home/<GRUPO>/RNASEQ/Genome/GRCh38.p13.gtf y `<SALIDA>` será un archivo de salida, en mi caso los nombre:
+Donde: `<BAMFILE>` corresponde a un archivo bam de salida del mapeo por STAR. `<GTF>` es el GTF del genoma que se encuentra en `/home/<GRUPO>/RNASEQ/Genome/GRCh38.p13.gtf` y `<SALIDA>` será un archivo de salida, en mi caso los nombre:
 <ul>
 <li> SRR605000_trimmedAligned.sortedByCoord.out.bam.htseq.out</li>
 <li> SRR605001_trimmedAligned.sortedByCoord.out.bam.htseq.out</li>
