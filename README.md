@@ -480,6 +480,7 @@ Una descripción de las opciones la puede encontrar [acá](https://www.gsea-msig
 Ahora deberá describir algunas categorías enriquecidas en su informe así como mostrar algunos Blue-Pink O'Gram de la colección HallMark y/o alguna otra elegida por usted.
 
 
+![FiguraGSEA15.png](imgs/FiguraGSEA15.png "FiguraGSEA15.csv")
 
 
 
