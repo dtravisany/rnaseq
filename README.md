@@ -178,12 +178,12 @@ en un simple archivo de abundancia de reads por gen. Para esto utilizaremos [HTS
 
 Donde: `<BAMFILE>` corresponde a un archivo bam de salida del mapeo por STAR. `GTF` es el GTF del genoma que se encuentra en /home/<GRUPO>/RNASEQ/Genome/GRCh38.p13.gtf y `<SALIDA>` será un archivo de salida, en mi caso los nombre:
 <ul>
-<li> `SRR605000_trimmedAligned.sortedByCoord.out.bam.htseq.out`</li>
-<li> `SRR605001_trimmedAligned.sortedByCoord.out.bam.htseq.out`</li>
-<li> `SRR605002_trimmedAligned.sortedByCoord.out.bam.htseq.out`</li>
-<li> `SRR605003_trimmedAligned.sortedByCoord.out.bam.htseq.out`</li>
-<li> `SRR605004_trimmedAligned.sortedByCoord.out.bam.htseq.out`</li>
-<li> `SRR605005_trimmedAligned.sortedByCoord.out.bam.htseq.out`</li>
+<li> SRR605000_trimmedAligned.sortedByCoord.out.bam.htseq.out</li>
+<li> SRR605001_trimmedAligned.sortedByCoord.out.bam.htseq.out</li>
+<li> SRR605002_trimmedAligned.sortedByCoord.out.bam.htseq.out</li>
+<li> SRR605003_trimmedAligned.sortedByCoord.out.bam.htseq.out</li>
+<li> SRR605004_trimmedAligned.sortedByCoord.out.bam.htseq.out</li>
+<li> SRR605005_trimmedAligned.sortedByCoord.out.bam.htseq.out</li>
 </ul>
 
 Ok, acabamos de terminar de trabajar con los grandes volúmenes de datos de secuenciación, hemos terminado con un archivo 
