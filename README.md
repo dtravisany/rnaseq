@@ -102,7 +102,10 @@ Sin embargo, es más fácil hacer un script que nos permita realizar este trabaj
 
 Luego utilizando está lista, ejecutamos el script que programé que permite ejecutar TrimGalore para 4 archivos simultáneos:
 
-		run_trim.pl lista
+		run_trim.pl -f lista -l <largo hasta 50% del read> -q <calidad mínima>
+
+Donde `<largo hasta 50% del read>` corresponde al 50% de los reads, por ejemplo si su read mide 100 es 50, 80 es 40 y así.
+Calidad `<calidad mínima>` corresponde a la calidad phred.
 
 
 ## Alineamiento / Mapeo de los reads al genoma de referencia.
