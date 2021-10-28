@@ -126,7 +126,7 @@ Dado que la indexación del genoma humano demora tiempo, es recomendable crear u
 
  `STAR` genera el índice  de la siguiente manera:
 
-	STAR --runMode genomeGenerate --genomeDir /mnt/md0/curso/home/<GRUPO>/RNASEQ/Genome/ --genomeFastaFiles /mnt/md0/curso/home/<GRUPO>/RNASEQ/Genome/GCCh38.p13.fna --sjdbGTFfile /mnt/md0/curso/home/<GRUPO>/RNASEQ/Genome/GCF_000001405.39_GRCh38.p13_genomic.gtf --sjdbGTFtagExonParentTranscript Parent --sjdbOverhang 99 --runThreadN 8
+	STAR --runMode genomeGenerate --genomeDir /mnt/md0/curso/home/<GRUPO>/RNASEQ/genome/ --genomeFastaFiles /mnt/md0/curso/home/<GRUPO>/RNASEQ/genome/GCF_000001405.39_GRCh38.p13_genomic.fna --sjdbGTFfile /mnt/md0/curso/home/<GRUPO>/RNASEQ/Genome/GCF_000001405.39_GRCh38.p13_genomic.gtf --sjdbGTFtagExonParentTranscript Parent --sjdbOverhang 99 --runThreadN 8
 
 Todos los resultados quedarán guardados en la dirección dada al parámetro `--genomeDir`
 
@@ -208,9 +208,9 @@ donde `<usuario>` es su nombre de usuario.
 
 
 ```bash
-	scp dbio<N>@bio-5.cmm.uchile.cl:RNASEQ/*.htseq.out /home/<usuario>/RNASEQ/
+	scp <USER>@<SERVER>:RNASEQ/reads/*.htseq.out /home/<usuario>/RNASEQ/
 ```
-Donde `<N>` es el número de su grupo y `<usuario>` es el nombre de la carpeta.
+Donde `<USER>` es su grupo en el servidor y `<usuario>` es el nombre de la carpeta en su computador.
 
 
 ## Instalación de R en su computador
