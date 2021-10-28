@@ -9,7 +9,7 @@ experimentos de secuenciación provenientes de RNA-Seq.
 
 Se realizarán las siguientes tareas:
 
-- Control de Calidad de los reads con [__FastQC__][https://www.bioinformatics.babraham.ac.uk/projects/fastqc/].
+- Control de Calidad de los reads con [__FastQC__](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/).
 - Alineamiento de los reads a un genoma de referencia con el programa [__STAR__](https://academic.oup.com/bioinformatics/article/29/1/15/272537).
 - Generación de un índice para el archivo de mapeo en formato [__BAM__](https://en.wikipedia.org/wiki/Binary_Alignment_Map) con [__SAMtools__](https://en.wikipedia.org/wiki/SAMtools). 
 - Conversión de los archivos a conteo por genes[__HTSeq__](https://htseq.readthedocs.io/en/master/).
