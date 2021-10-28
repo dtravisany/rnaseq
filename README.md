@@ -52,7 +52,7 @@ pero contiene algunas convenciones que son especificas del atributo gene del 'GF
 
 En el artículo, se utilizó la versión [GRCh37] del Genoma Humano, en nuestro caso utilizaremos la última versión del Genoma correspondiente a la [GRCh38.p13](https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.39) liberado en febrero del 2019. 
 
-El ftp con la data la puede encontrar en el siguiente FTP: ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13 (Ya se encuentra descargado).
+El ftp con la data la puede encontrar en el siguiente [__FTP__](http://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13) (Ya se encuentra descargado).
 
 
 ### Reads:
