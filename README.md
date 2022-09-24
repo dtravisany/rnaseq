@@ -95,7 +95,7 @@ Recordemos la tabla de phred Quality:
 El resultado del comando nos entregará los reads filtrados con extensión `trimmed.fq` y un log con extensión `fastq_trimming_report.txt`
 
 
-Sin embargo, es más fácil hacer un script que nos permita realizar este trabajo repetitivo de una sola vez, para esto necesitamos primero una lista con todos nuestros fastq, los podras encontrar en `/mnt/md0/curso/home/<GRUPO>/RNASEQ/reads/` (donde `<GRUPO>` es el usuario con el que se conecta por ssh):
+Sin embargo, es más fácil hacer un script que nos permita realizar este trabajo repetitivo de una sola vez, para esto necesitamos primero una lista con todos nuestros fastq, los podras encontrar en `~/userN/RNASEQ/reads/` (donde `userN` es el usuario con el que se conecta por ssh):
 
 		ls *.fastq > lista
 
@@ -115,7 +115,7 @@ Calidad `<calidad mínima>` corresponde a la calidad phred.
 
 Para mapear los reads al genoma de referencia los alineadores deben generar un índice del genoma. Esto permite que el proceso de mapear millones de reads se haga de forma eficiente.
 
-La carpeta `/mnt/md0/curso/home/<GRUPO>/RNASEQ/genome/` contiene los archivos del genoma humano, el archivo fasta de
+La carpeta `~/userN/RNASEQ/genome/` contiene los archivos del genoma humano, el archivo fasta de
 los cromosomas y la anotación de los genes en formato `GTF`. Estos fueron  descargados desde el ftp de NCBI: 
 ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13
 
@@ -150,7 +150,7 @@ Dado que se genera el índice de los cromosomas y el genoma, ahora debemos proce
 
 Para eso `STAR` utiliza:
 
-	STAR --genomeDir /mnt/md0/curso/home/<GRUPO>/RNASEQ/genome/ --readFilesIn <READSFILE>_trimmed.fq --runThreadN 8 --outSAMtype BAM SortedByCoordinate --outFileNamePrefix <READSFILE>_trimmed
+	STAR --genomeDir ~/userN/RNASEQ/genome/ --readFilesIn <READSFILE>_trimmed.fq --runThreadN 8 --outSAMtype BAM SortedByCoordinate --outFileNamePrefix <READSFILE>_trimmed
 
 Donde `<GRUPO>` es su grupo y <READSFILE> corresponde al id SRR de un archivo FASTQ. Debe ejecutar esto para cada SRR.
 
