@@ -50,9 +50,9 @@ El genoma de referencia y la anotación en un formato como el [GFF](https://gith
 En este caso, para la anotación utilizaremos el formato [Gene Transfer Format GTF](http://mblab.wustl.edu/GTF22.html) que es una derivación del formato 'GFF'. Al igual que el 'GFF' está tabulado, 
 pero contiene algunas convenciones que son especificas del atributo gene del 'GFF'.
 
-En el artículo, se utilizó la versión [GRCh37] del Genoma Humano, en nuestro caso utilizaremos la última versión del Genoma correspondiente a la [GRCh38.p13](https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.39) liberado en febrero del 2019. 
+En el artículo, se utilizó la versión [GRCh38] del Genoma Humano, en nuestro caso utilizaremos la última versión del Genoma correspondiente a la [GRCh38.p14](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/) liberado el 03 febrero del 2022. 
 
-El ftp con la data la puede encontrar en el siguiente [__FTP__](http://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13) (Ya se encuentra descargado).
+El ftp con la data la puede encontrar en el siguiente [__FTP__](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/) (Ya se encuentra descargado).
 
 
 ### Reads:
@@ -117,7 +117,7 @@ Para mapear los reads al genoma de referencia los alineadores deben generar un �
 
 La carpeta `~/RNASEQ/genome` contiene los archivos del genoma humano, el archivo fasta de
 los cromosomas y la anotación de los genes en formato `GTF`. Estos fueron  descargados desde el ftp de NCBI: 
-ftp://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.39_GRCh38.p13
+https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/
 
 Dado que la indexación del genoma humano demora tiempo, es recomendable crear una nueva screen como en los prácticos anteriores:
 
