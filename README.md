@@ -39,6 +39,10 @@ Ustedes utilizarán los siguientes datos:
 |4|[E-GEOD-58326](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-58326/)	| Transcription profiling by high throughput sequencing of ZNF217 chromatin occupancy in the breast cancer cell genome |
 |5|[E-GEOD-54846](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-54846/)	| RNA-seq from control and macroH2A1-depleted IMR90 primary human lung fibroblasts |
 |6|[E-GEOD-40131](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-40131/)	| Transcription profiling by high throughput sequencing of human monocytes treated with synthetic cationic peptide IDR-1018 * Reads de 34bp |
+|7|[E-MTAB-4811](https://www.ebi.ac.uk/gxa/experiments/E-MTAB-4811/)	| Transcription profiling by high throughput sequencing of Zika virus-infected human brain organoids |
+|8|[E-GEOD-67812](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-67812/)	| RNA-seq of myotonic dystrophic and control heart samples |
+|9|[E-MTAB-2349](https://www.ebi.ac.uk/gxa/experiments/E-MTAB-2349/)	| RNA-seq analysis of U2OS cells exposed to heat stress |
+|10|[E-GEOD-55123](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-55123/)	| Expression data from untreated and Aza (azacytidine) treated AML3 cells |
 
 Los datos ya se encuentran en el servidor y no es necesario descargarlos nuevamente, se ponen los link a disposición para que pueda identificar de donde se obtienen los datos en las bases de datos internacionales y para que puedan descargar metadata y artículo asociado a la investigación.
 
@@ -126,7 +130,7 @@ Dado que la indexación del genoma humano demora tiempo, es recomendable crear u
 
  `STAR` genera el índice  de la siguiente manera:
 
-	STAR --runMode genomeGenerate --genomeDir /mnt/md0/curso/home/<GRUPO>/RNASEQ/genome/ --genomeFastaFiles /mnt/md0/curso/home/<GRUPO>/RNASEQ/genome/GCF_000001405.39_GRCh38.p13_genomic.fna --sjdbGTFfile /mnt/md0/curso/home/<GRUPO>/RNASEQ/Genome/GCF_000001405.39_GRCh38.p13_genomic.gtf --sjdbGTFtagExonParentTranscript Parent --sjdbOverhang 99 --runThreadN 8
+	STAR --runMode genomeGenerate --genomeDir /mnt/md0/curso/home/<GRUPO>/RNASEQ/genome/ --genomeFastaFiles /mnt/md0/curso/home/<GRUPO>/RNASEQ/genome/GCF_000001405.40_GRCh38.p14_genomic.fna --sjdbGTFfile /mnt/md0/curso/home/<GRUPO>/RNASEQ/Genome/GCF_000001405.40_GRCh38.p14_genomic.gtf --sjdbGTFtagExonParentTranscript Parent --sjdbOverhang 99 --runThreadN 8
 
 Todos los resultados quedarán guardados en la dirección dada al parámetro `--genomeDir`
 
@@ -183,7 +187,7 @@ en un simple archivo de abundancia de reads por gen. Para esto utilizaremos [HTS
 	
 :warning: Fíjese en el ` > ` antes de `<SALIDA>` en la línea de comando superior.
 	
-Donde: `<BAMFILE>` corresponde a un archivo bam de salida del mapeo por STAR. `<GTF>` es el GTF del genoma que se encuentra en `/home/<GRUPO>/RNASEQ/Genome/GRCh38.p13.gtf` y `<SALIDA>` será un archivo de salida, en mi caso los nombré:
+Donde: `<BAMFILE>` corresponde a un archivo bam de salida del mapeo por STAR. `<GTF>` es el GTF del genoma que se encuentra en `/home/<GRUPO>/RNASEQ/Genome/GRCh38.p14.gtf` y `<SALIDA>` será un archivo de salida, en mi caso los nombré:
 <ul>
 <li> SRR605000_trimmedAligned.sortedByCoord.out.bam.htseq.out</li>
 <li> SRR605001_trimmedAligned.sortedByCoord.out.bam.htseq.out</li>
