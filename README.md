@@ -38,11 +38,11 @@ Ustedes utilizarán los siguientes datos:
 |3|[E-GEOD-62854](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-62854/)	| Transcription profiling by high throughput sequencing in PER2 mutant of human endometrial stromal cells |
 |4|[E-GEOD-58326](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-58326/)	| Transcription profiling by high throughput sequencing of ZNF217 chromatin occupancy in the breast cancer cell genome |
 |5|[E-GEOD-54846](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-54846/)	| RNA-seq from control and macroH2A1-depleted IMR90 primary human lung fibroblasts |
-|6|[E-GEOD-40131](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-40131/)	| Transcription profiling by high throughput sequencing of human monocytes treated with synthetic cationic peptide IDR-1018 * Reads de 34bp |
-|7|[E-MTAB-4811](https://www.ebi.ac.uk/gxa/experiments/E-MTAB-4811/)	| Transcription profiling by high throughput sequencing of Zika virus-infected human brain organoids |
-|8|[E-GEOD-67812](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-67812/)	| RNA-seq of myotonic dystrophic and control heart samples |
-|9|[E-MTAB-2349](https://www.ebi.ac.uk/gxa/experiments/E-MTAB-2349/)	| RNA-seq analysis of U2OS cells exposed to heat stress |
-|10|[E-GEOD-55123](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-55123/)	| Expression data from untreated and Aza (azacytidine) treated AML3 cells |
+|6|[E-GEOD-53280](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-53280/)	| Transcriptomic profiling of HeLa cells infected with Salmonella Typhimurium |
+|7|[E-MTAB-6013](https://www.ebi.ac.uk/gxa/experiments/E-MTAB-6013/)	| Gene expression profiling by RNA-seq of human iPSC and iPSC-derived cardiomyocytes |
+|8|[E-GEOD-42212](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-42212/)	| Transcription profiling of proliferative and Ras-induced senescent human primary fibroblasts |
+|9|[E-MTAB-8917](https://www.ebi.ac.uk/gxa/experiments/E-MTAB-8917/)	| Transcriptomics analysis of skeletal muscle in type 2 diabetes patients |
+|10|[E-GEOD-52742](https://www.ebi.ac.uk/gxa/experiments/E-GEOD-52742/)	| Genome-wide expression profiling of B Lymphocytes reveals IL4R increase in allergic asthma |
 
 Los datos ya se encuentran en el servidor y no es necesario descargarlos nuevamente, se ponen los link a disposición para que pueda identificar de donde se obtienen los datos en las bases de datos internacionales y para que puedan descargar metadata y artículo asociado a la investigación.
 
