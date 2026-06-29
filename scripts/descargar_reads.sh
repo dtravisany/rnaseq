@@ -58,13 +58,13 @@ GROUP="${1:-all}"
 DEST="${2:-$DEST_DEFAULT}"
 
 if [[ "$GROUP" == "all" ]]; then
-  GROUPS=(1 2 3 4 5 6 7 8 9 10)
+  GRUPOS=(1 2 3 4 5 6 7 8 9 10)
 else
   if [[ -z "${RUNS[$GROUP]:-}" ]]; then
     echo "ERROR: grupo '$GROUP' no valido. Use uno de: 1 2 3 4 5 6 7 8 9 10 (o sin argumento para todos)." >&2
     exit 1
   fi
-  GROUPS=("$GROUP")
+  GRUPOS=("$GROUP")
 fi
 
 # --- chequeo de herramientas --------------------------------------------------
@@ -78,12 +78,12 @@ done
 mkdir -p "$DEST"
 echo "Destino:  $DEST"
 echo "Hebras:   $THREADS"
-echo "Grupos:   ${GROUPS[*]}"
+echo "Grupos:   ${GRUPOS[*]}"
 echo
 
 # --- descarga -----------------------------------------------------------------
 total=0; ok=0; skip=0; fail=0
-for g in "${GROUPS[@]}"; do
+for g in "${GRUPOS[@]}"; do
   echo "=============================================================="
   echo " Grupo $g  ->  ${ACC[$g]}"
   echo "=============================================================="
