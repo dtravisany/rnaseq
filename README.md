@@ -89,12 +89,14 @@ Nos traemos los resultados a nuestro computador para evaluar los resultados de f
 
 ![FASTQC](imgs/fastqc.png "fastqc")
 
+Luego de revisar todos nuestros reads. Podemos ver que la calidad desciende después de la base 35-40. 
+
 Utilizaremos Trim Galore para hacer un quality check y filtrar los reads de las muestras, entonces para cada archivo de reads podríamos ejecutar el comando:
 
-		trim_galore --length 37  --quality 30 <READSFILE.fastq>
+		trim_galore --length 40  --quality 30 <READSFILE.fastq>
 
 
-Ese comando filtrará todos los reads que tengan un largo menor a `37bp` (~50% del read, dado que son reads de 75bp) y un [phred quality value](https://www.illumina.com/documents/products/technotes/technote_Q-Scores.pdf) menor a `30`. 
+Ese comando filtrará todos los reads que tengan un largo menor a `40bp` (~50% del read, dado que son reads de 80bp) y un [phred quality value](https://www.illumina.com/documents/products/technotes/technote_Q-Scores.pdf) menor a `30`. 
 
 
 Recordemos la tabla de phred Quality:
@@ -109,8 +111,7 @@ Recordemos la tabla de phred Quality:
 
 El resultado del comando nos entregará los reads filtrados con extensión `trimmed.fq` y un log con extensión `fastq_trimming_report.txt`
 
-
-Sin embargo, es más fácil hacer un script que nos permita realizar este trabajo repetitivo de una sola vez, para esto necesitamos primero una lista con todos nuestros fastq, los podras encontrar en `~/RNASEQ/reads/` :
+Sin embargo, es más fácil hacer un script que nos permita realizar este trabajo repetitivo de una sola vez, para esto necesitamos primero una lista con todos nuestros fastq, la podrá generar en `~/RNASEQ/reads/` :
 
 		ls *.fastq > lista
 
@@ -121,10 +122,15 @@ Luego utilizando está lista, ejecutamos el script que programé que permite eje
 Donde `<largo hasta 50% del read>` corresponde al 50% del tamaño de los reads, por ejemplo si su read mide 100 es 50, 80 es 40 y así.
 Calidad `<calidad mínima>` corresponde a la calidad phred.
 
+Nos traemos nuestros archivos de reporte:
+
+		scp <usuario>@<servidor>:RNASEQ/reads/*trimming_report.json .
+
+Ahora iremos a [google colab](https://colab.research.google.com/drive/17b28N7h5ouyQiIwAXHxKMUarzjKaXr5P?usp=sharing) para revisar nuestros reportes.
 
 ## Alineamiento / Mapeo de los reads al genoma de referencia.
 
-# Importante esto no se debe ejecutar en el servidor, Generar el índice demora mucho tiempo y ya está construido. Esta sección es para que sepan como se hace.
+# Importante esto no se debe ejecutar en el servidor, generar el índice demora mucho tiempo y ya está construido. Esta sección es para que sepan como se hace.
 
 ### Generación de un índice del Genoma
 
