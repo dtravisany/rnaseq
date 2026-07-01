@@ -87,6 +87,7 @@ Nos traemos los resultados a nuestro computador para evaluar los resultados de f
 
 		scp <usuario>@<servidor>:RNASEQ/reads/*.zip .
 
+![FASTQC](imgs/fastqc.png "fastqc")
 
 Utilizaremos Trim Galore para hacer un quality check y filtrar los reads de las muestras, entonces para cada archivo de reads podríamos ejecutar el comando:
 
