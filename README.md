@@ -81,12 +81,16 @@ utilizaremos [HTSeq](https://htseq.readthedocs.io/en/release_0.11.1/).
 
 Partiremos con fastQC para revisar nuestros reads, ver los tamaños y calidades de nuestros reads.
 
-		fastqc <READS.fastq>
+		fastqc --threads 6 *.fastq
+
+Nos traemos los resultados a nuestro computador para evaluar los resultados de fastQC.
+
+		scp <usuario>@<servidor>:RNASEQ/reads/*.zip .
 
 
 Utilizaremos Trim Galore para hacer un quality check y filtrar los reads de las muestras, entonces para cada archivo de reads podríamos ejecutar el comando:
 
-			trim_galore --length 37  --quality 30 <READSFILE.fastq>
+		trim_galore --length 37  --quality 30 <READSFILE.fastq>
 
 
 Ese comando filtrará todos los reads que tengan un largo menor a `37bp` (~50% del read, dado que son reads de 75bp) y un [phred quality value](https://www.illumina.com/documents/products/technotes/technote_Q-Scores.pdf) menor a `30`. 
