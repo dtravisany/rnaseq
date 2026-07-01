@@ -441,7 +441,7 @@ Podemos ver que una de las categorías enriquecidas corresponde a cornified enve
 
 El archivo de conteos lo cargaremos en GSEA. Para esto es necesario descargar GSEA. (Debe darse de alta en la página para descargarlo [aquí](https://www.gsea-msigdb.org/gsea/login.jsp)).
 
-En mi caso (UBUNTU 18.04 LTS) descargué la versión `GSEA_Linux_4.1.0.zip`.
+En mi caso (UBUNTU 24.04 LTS) descargué la versión `GSEA_Linux_4.4.0.zip`.
 
 Descomprima GSEA y ejecútelo, en mi caso lo ejecuté desde un terminal entrando a la carpeta descomprimida y ejecutando: `sh gsea.sh`
 
