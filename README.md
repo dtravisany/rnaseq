@@ -79,6 +79,11 @@ utilizaremos [HTSeq](https://htseq.readthedocs.io/en/release_0.11.1/).
 
 ## Quality Check de los Reads
 
+Partiremos con fastQC para revisar nuestros reads, ver los tamaños y calidades de nuestros reads.
+
+		fastqc <READS.fastq>
+
+
 Utilizaremos Trim Galore para hacer un quality check y filtrar los reads de las muestras, entonces para cada archivo de reads podríamos ejecutar el comando:
 
 			trim_galore --length 37  --quality 30 <READSFILE.fastq>
@@ -108,7 +113,7 @@ Luego utilizando está lista, ejecutamos el script que programé que permite eje
 
 		run_trim.pl -f lista -l <largo hasta 50% del read> -q <calidad mínima>
 
-Donde `<largo hasta 50% del read>` corresponde al 50% de los reads, por ejemplo si su read mide 100 es 50, 80 es 40 y así.
+Donde `<largo hasta 50% del read>` corresponde al 50% del tamaño de los reads, por ejemplo si su read mide 100 es 50, 80 es 40 y así.
 Calidad `<calidad mínima>` corresponde a la calidad phred.
 
 
@@ -131,7 +136,7 @@ Dado que la indexación del genoma humano demora tiempo, es recomendable crear u
 
  `STAR` genera el índice  de la siguiente manera:
 
-	STAR --runMode genomeGenerate --genomeDir /mnt/md0/curso/home/<GRUPO>/RNASEQ/genome/ --genomeFastaFiles /mnt/md0/curso/home/<GRUPO>/RNASEQ/genome/GCF_000001405.40_GRCh38.p14_genomic.fna --sjdbGTFfile /mnt/md0/curso/home/<GRUPO>/RNASEQ/Genome/GCF_000001405.40_GRCh38.p14_genomic.gtf --sjdbGTFtagExonParentTranscript Parent --sjdbOverhang 99 --runThreadN 8
+	STAR --runMode genomeGenerate --genomeDir /mnt/biostore/dipBG/HumanGenome/ --genomeFastaFiles /mnt/biostore/dipBG/HumanGenome/GCF_000001405.40_GRCh38.p14_genomic.fna --sjdbGTFfile /mnt/biostore/dipBG/HumanGenome/GCF_000001405.40_GRCh38.p14_genomic.gtf --sjdbGTFtagExonParentTranscript Parent --sjdbOverhang 99 --runThreadN 24
 
 Todos los resultados quedarán guardados en la dirección dada al parámetro `--genomeDir`
 
