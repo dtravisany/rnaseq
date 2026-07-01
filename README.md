@@ -11,6 +11,7 @@ Se realizarán las siguientes tareas:
 
 - Control de Calidad de los reads con [__FastQC__](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/).
 - Alineamiento de los reads a un genoma de referencia con el programa [__STAR__](https://academic.oup.com/bioinformatics/article/29/1/15/272537).
+- Para el filtrado de los reads utilizaremos [TrimGalore](https://github.com/FelixKrueger/TrimGalore/)
 - Generación de un índice para el archivo de mapeo en formato [__BAM__](https://en.wikipedia.org/wiki/Binary_Alignment_Map) con [__SAMtools__](https://en.wikipedia.org/wiki/SAMtools). 
 - Conversión de los archivos a conteo por genes [__HTSeq__](https://htseq.readthedocs.io/en/master/).
 - Análisis de los conteos con [__DeSeq2__](https://bioconductor.org/packages/release/bioc/html/DESeq2.html).
@@ -66,7 +67,7 @@ De todas maneras, si los quiere descargar, puede encontrar los id en el link de 
 
 ### Software:
 
-- Para el filtrado de los reads utilizaremos [TrimGalore](https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md).
+- Para el filtrado de los reads utilizaremos [TrimGalore](https://github.com/FelixKrueger/TrimGalore/).
 - Para el alineamiento de los reads filtrados utilizaremos [STAR](https://github.com/alexdobin/STAR).
 - Para generar el conteo a partir de los archivos 'BAM' (que es la forma binaria de un [SAM](https://samtools.github.io/hts-specs/SAMv1.pdf))
 utilizaremos [HTSeq](https://htseq.readthedocs.io/en/release_0.11.1/).
