@@ -189,6 +189,17 @@ Para mayor información sobre `STAR` puede visitar el [manual](https://github.co
 
 Este proceso generará un archivo `BAM` que en mi caso queda nombrado: `<READSFILE>_trimmedAligned.sortedByCoord.out.bam` y  que contiene los reads mapeados al genoma. Debera repetir el proceso para cada READSFILE, es decir (un total de 6 veces).
 
+### Wrapper de STAR
+
+Para evitar correr uno a uno los reads con STAR ejecute el wrapper `run_star.pl`, pero antes guardemos nuestros archivos trimmeados en una lista
+
+		ls *.fq > trimmed
+
+Luego corremos el wrapper:
+
+		run_star.pl -f trimmed -d ~/RNASEQ/genome -t 8 -o trimmed
+
+
 ##Generar los conteos
 
 El `BAM` generado tiene las posiciones y el detalle de cada read mapeado a nuestro genoma de referencia,
@@ -196,6 +207,15 @@ pero para calcular las estadísticas del mapeo necesitamos antes, generar un ind
 Entonces para cada bam generararemos un archivo bam.bai (índice del bam)
 	
 		samtools index <READSFILE>_trimmedAligned.sortedByCoord.out.bam
+
+Al igual que en los pasos anteriores tenemos un wrapper que nos puede hacer el trabajo más simple.
+Primero creamos la lista con los archivos:
+
+         ls *_trimmedAligned.sortedByCoord.out.bam > bams
+
+Ahora corremos nuestro wrapper:
+
+		run_samtools.pl -f bams
 	
 Luego, necesitaremos un programa que nos permita transformar el detalle del mapeo, el índice y el GFF en 
 en un simple archivo de abundancia de reads por gen. Para esto utilizaremos [HTSeq](https://htseq.readthedocs.io/en/release_0.11.1/).
@@ -213,7 +233,12 @@ Donde: `<BAMFILE>` corresponde a un archivo bam de salida del mapeo por STAR. `<
 <li> SRR605004_trimmedAligned.sortedByCoord.out.bam.htseq.out</li>
 <li> SRR605005_trimmedAligned.sortedByCoord.out.bam.htseq.out</li>
 </ul>
+Al igual que los pasos anteriores he generado un wrapper que nos facilita esta parte del trabajo.
+La lista de bams ya la tenemos, entonces ejecutamos:
 
+		run_htseq.pl -f bams -g ~/RNASEQ/genome/GCF_000001405.40_GRCh38.p14_genomic.gtf -o htseq.out
+
+---
 Ok, acabamos de terminar de trabajar con los grandes volúmenes de datos de secuenciación, hemos terminado con un archivo 
 pequeño que contiene los reads de cada experimento mapeados al genoma de referencia. Esto puede ser trabajado en su computador personal.
 
