@@ -216,7 +216,11 @@ Primero creamos la lista con los archivos:
 Ahora corremos nuestro wrapper:
 
 		run_samtools.pl -f bams
-	
+
+Ahora activaremos el ambiente base de conda con:
+
+		conda activate base
+
 Luego, necesitaremos un programa que nos permita transformar el detalle del mapeo, el índice y el GFF en 
 en un simple archivo de abundancia de reads por gen. Para esto utilizaremos [HTSeq](https://htseq.readthedocs.io/en/release_0.11.1/).
 
