@@ -292,6 +292,7 @@ Necesitaremos unas bibliotecas para graficar:
 install.packages("RColorBrewer")
 install.packages("gplots")
 install.packages("ggplot2")
+install.packages("data.table")
 ```
 
 Para calcular la expresión diferencial necesitaremos la librería de R [DESeq2](https://www.bioconductor.org/packages/release/bioc/html/DESeq2.html). La publicación que detalla la metodología implementada en DESeq2 la puede encontrar [acá](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4302049/pdf/13059_2014_Article_550.pdf)
