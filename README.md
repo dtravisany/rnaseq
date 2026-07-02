@@ -238,6 +238,10 @@ Donde: `<BAMFILE>` corresponde a un archivo bam de salida del mapeo por STAR. `<
 <li> SRR605005_trimmedAligned.sortedByCoord.out.bam.htseq.out</li>
 </ul>
 Al igual que los pasos anteriores he generado un wrapper que nos facilita esta parte del trabajo.
+Para correr este comando es recomendable utilizar screen
+
+		screen -S htseq
+		
 La lista de bams ya la tenemos, entonces ejecutamos:
 
 		run_htseq.pl -f bams -g ~/RNASEQ/genome/GCF_000001405.40_GRCh38.p14_genomic.gtf -o htseq.out
